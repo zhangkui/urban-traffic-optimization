@@ -1,13 +1,1 @@
-﻿{
-    "bug_id":  "BUG-021",
-    "number":  21,
-    "task_type":  "bugfix",
-    "bug_type":  "concurrency",
-    "business_domain":  "adaptive signal",
-    "green_branch":  "bug21_green",
-    "g1_sha":  "66d4b17f18b26b1f5b496b1def794affd6693800",
-    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
-}
+﻿{"bug_id":"BUG-021","number":21,"task_type":"bugfix","bug_type":"concurrency","business_domain":"adaptive signal","green_branch":"bug21_green","g1_sha":"66d4b17f18b26b1f5b496b1def794affd6693800","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.","red_branch":"bug21_red","red_sha":"78ec590c96a429ceed7260d7da6f02ac10275122","verify_cmds":["go test -race ./internal/adaptive -count=1 -run TestAdaptiveControllerConcurrentConfiguration"],"gold_root_cause":"中文根因：自适应控制器对 controllers map 的配置读写没有同步保护。生产文件/符号：internal/adaptive/service.go 的 Service.Configure 和 Get。调用链：自适应配置请求 → map 查找/写回 → 控制器读取。失效原因：并发 map 访问产生 data race，更新可能互相覆盖。证据：-race 测试报告 Configure 内 mapaccess 与 mapassign 并发冲突。","success_criteria":"目标行为：并发配置和读取控制器时无 race 且版本更新一致。边界：单控制器、多控制器、重复配置和读取并发均安全。合法场景：多个配置请求完成后控制器保持合法配置。验证标准：-race 回归测试通过。","status":"red_test_reproduced"}
