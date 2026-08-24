@@ -1,1 +1,19 @@
-﻿{"bug_id":"BUG-023","number":23,"task_type":"bugfix","bug_type":"error","business_domain":"emission report","green_branch":"bug23_green","g1_sha":"9ea707f2951c48fb8d455281fa6e3b96e818b012","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Return an explicit error for an unknown vehicle emission factor instead of silently omitting the vehicle.","red_branch":"bug23_red","red_sha":"9bf252bbc1f64d99ef81432526e978b509b8ec69","verify_cmds":["go test ./internal/emission -count=1 -run TestEstimateStrictRejectsUnknownVehicleFactor"],"gold_root_cause":"中文根因：严格排放估算入口直接复用 Estimate，未知车型被静默跳过并返回 nil 错误。生产文件/符号：internal/emission/service.go 的 Service.EstimateStrict。调用链：排放报表 → EstimateStrict → Estimate → 因子查找。失效原因：数据缺少排放因子时报告看似成功但排放量不完整。证据：红测传入 motorcycle 因子后仍返回 nil error。","success_criteria":"目标行为：未知车型或污染物因子立即返回明确错误。边界：空车型、未知车型、已知车型和混合车型均稳定。合法场景：所有因子存在时生成完整估算。验证标准：回归测试通过。","status":"red_test_reproduced"}
+﻿{
+    "bug_id":  "BUG-023",
+    "number":  23,
+    "task_type":  "bugfix",
+    "bug_type":  "error",
+    "business_domain":  "emission report",
+    "green_branch":  "bug23_green",
+    "g1_sha":  "9ea707f2951c48fb8d455281fa6e3b96e818b012",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "遇到未知车型排放因子时，排放报表必须返回明确错误。",
+    "red_branch":  "bug23_red",
+    "red_sha":  "9bf252bbc1f64d99ef81432526e978b509b8ec69",
+    "verify_cmds":  [
+                        "go test ./internal/emission -count=1 -run TestEstimateStrictRejectsUnknownVehicleFactor"
+                    ],
+    "gold_root_cause":  "中文根因：严格排放估算入口直接复用 Estimate，未知车型被静默跳过并返回 nil 错误。生产文件/符号：internal/emission/service.go 的 Service.EstimateStrict。调用链：排放报表 → EstimateStrict → Estimate → 因子查找。失效原因：数据缺少排放因子时报告看似成功但排放量不完整。证据：红测传入 motorcycle 因子后仍返回 nil error。",
+    "success_criteria":  "目标行为：未知车型或污染物因子立即返回明确错误。边界：空车型、未知车型、已知车型和混合车型均稳定。合法场景：所有因子存在时生成完整估算。验证标准：回归测试通过。",
+    "status":  "red_test_reproduced"
+}

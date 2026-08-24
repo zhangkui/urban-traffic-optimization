@@ -7,7 +7,7 @@
     "green_branch":  "bug15_green",
     "g1_sha":  "436bb72cdca4800c7f905d589b3422232ff25cda",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Release a timed-out background job and its queue slot when the job context expires.",
+    "user_query":  "后台交通任务超过截止时间后，必须通过 context 取消执行。",
     "red_branch":  "bug15_red",
     "red_sha":  "b67b25f2f47314befb6e9b85f66d635b8272e881",
     "verify_cmds":  [

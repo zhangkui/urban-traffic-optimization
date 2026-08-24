@@ -7,7 +7,7 @@
     "green_branch":  "bug2_green",
     "g1_sha":  "2d430b091280e62a274cb34fdfa1ec7b02b43e5b",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Find why querying an offline device without a heartbeat record can crash the device status endpoint, and identify the safe behavior.",
+    "user_query":  "设备没有心跳记录时，安排下一次巡检不得发生空指针崩溃。",
     "red_branch":  "bug2_red",
     "red_sha":  "98cede4e55d0f10ec4901125fd0bb93f0c83ab9c",
     "verify_cmds":  [

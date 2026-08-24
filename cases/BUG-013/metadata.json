@@ -7,7 +7,7 @@
     "green_branch":  "bug13_green",
     "g1_sha":  "d70ec7dac999a4164f0e4d55058240c80c9f50cb",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Make OD matrix filtering return a new pair slice so filtering a report cannot modify the stored matrix.",
+    "user_query":  "筛选 OD 矩阵时，不得修改调用方持有的原始观测数据。",
     "red_branch":  "bug13_red",
     "red_sha":  "a80fbee5af1c4111fef0dba9a0460daf3346ccee",
     "verify_cmds":  [

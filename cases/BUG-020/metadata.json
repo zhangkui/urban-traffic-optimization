@@ -1,1 +1,19 @@
-﻿{"bug_id":"BUG-020","number":20,"task_type":"bugfix","bug_type":"context","business_domain":"traffic forecast","green_branch":"bug20_green","g1_sha":"c056b90f484106411f025441fa6c2e7e52930673","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Do not publish an expired forecast result after the request context has been cancelled.","red_branch":"bug20_red","red_sha":"93e6a240d6bcbca63c3d66c4eb68102263b86eda","verify_cmds":["go test ./internal/forecast -count=1 -run TestPublishHonorsCancelledContext"],"gold_root_cause":"中文根因：预测发布入口接收取消上下文但完全忽略 Done 信号。生产文件/符号：internal/forecast/service.go 的 Service.Publish。调用链：预测任务 → Publish(ctx, result) → 发布结果。失效原因：请求已经取消时仍返回成功，过期预测可能进入实时数据流。证据：红测使用已取消 context 调用 Publish，结果未返回错误。","success_criteria":"目标行为：上下文取消后不得发布预测结果并返回 context 错误。边界：未取消、已取消、截止时间到期和 nil 结果都需稳定。合法场景：有效上下文正常发布，取消上下文被拒绝。验证标准：回归测试和全量测试通过。","status":"red_test_reproduced"}
+﻿{
+    "bug_id":  "BUG-020",
+    "number":  20,
+    "task_type":  "bugfix",
+    "bug_type":  "context",
+    "business_domain":  "traffic forecast",
+    "green_branch":  "bug20_green",
+    "g1_sha":  "c056b90f484106411f025441fa6c2e7e52930673",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "交通预测请求过期或取消后，系统不得继续发布预测结果。",
+    "red_branch":  "bug20_red",
+    "red_sha":  "93e6a240d6bcbca63c3d66c4eb68102263b86eda",
+    "verify_cmds":  [
+                        "go test ./internal/forecast -count=1 -run TestPublishHonorsCancelledContext"
+                    ],
+    "gold_root_cause":  "中文根因：预测发布入口接收取消上下文但完全忽略 Done 信号。生产文件/符号：internal/forecast/service.go 的 Service.Publish。调用链：预测任务 → Publish(ctx, result) → 发布结果。失效原因：请求已经取消时仍返回成功，过期预测可能进入实时数据流。证据：红测使用已取消 context 调用 Publish，结果未返回错误。",
+    "success_criteria":  "目标行为：上下文取消后不得发布预测结果并返回 context 错误。边界：未取消、已取消、截止时间到期和 nil 结果都需稳定。合法场景：有效上下文正常发布，取消上下文被拒绝。验证标准：回归测试和全量测试通过。",
+    "status":  "red_test_reproduced"
+}

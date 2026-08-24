@@ -7,7 +7,7 @@
     "green_branch":  "bug4_green",
     "g1_sha":  "4ddd8e917469e19ee7e19d3b5ae008d9bbf1bb26",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Find why a timing-plan approval failure loses its business error code and explain how the handler should preserve it.",
+    "user_query":  "配时方案审核失败时必须返回错误，不能静默接受无效审核。",
     "red_branch":  "bug4_red",
     "red_sha":  "25d3bf5a8bcc3ebe766bea79ea8b28d13de05fc6",
     "verify_cmds":  [

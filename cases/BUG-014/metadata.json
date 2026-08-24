@@ -7,7 +7,7 @@
     "green_branch":  "bug14_green",
     "g1_sha":  "4dd278abf6fbec8c012d4293e4bf2c88627414a1",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Find why invalid weather observations are silently replaced with default weather and explain how validation errors should surface.",
+    "user_query":  "天气观测字段非法时，系统必须拒绝数据而不是静默替换默认值。",
     "red_branch":  "bug14_red",
     "red_sha":  "6825ac7d96705625d4af162c81ae6b57a8a982d5",
     "verify_cmds":  [

@@ -7,7 +7,7 @@
     "green_branch":  "bug10_green",
     "g1_sha":  "f816278aa3341a75b665195e35f75087837e8736",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.",
+    "user_query":  "客户端断开后，实时 SSE 交通流发送不能永久阻塞。",
     "red_branch":  "bug10_red",
     "red_sha":  "0dd8a4656ce79187a2525518775abd07e5cb28f8",
     "verify_cmds":  [

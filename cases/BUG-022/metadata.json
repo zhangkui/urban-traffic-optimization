@@ -1,1 +1,19 @@
-﻿{"bug_id":"BUG-022","number":22,"task_type":"diagnosis","bug_type":"nil","business_domain":"capacity assessment","green_branch":"bug22_green","g1_sha":"dd78ebe73e4f2c576636e090aba492cc6a8c843b","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Find why capacity assessment can access a missing approach configuration and define the expected diagnostic result.","red_branch":"bug22_red","red_sha":"79327071c314d7c09f5c7dbea1e4c8348b76d368","verify_cmds":["go test ./internal/capacity -count=1 -run TestAssessConfiguredReportsMissingApproach"],"gold_root_cause":"中文根因：AssessConfigured 将缺失的 ApproachInput 指针直接解引用。生产文件/符号：internal/capacity/service.go 的 Service.AssessConfigured。调用链：路口配置查询 → AssessConfigured → Assess。失效原因：缺失进口道配置应转为诊断结果，却在解引用 nil 时 panic。证据：红测传入 nil 后复现 nil pointer panic。","success_criteria":"目标行为：缺失配置返回可诊断结果而非 panic。边界：nil、单进口道、多进口道和默认配时均稳定。合法场景：合法配置正常计算容量，缺失配置明确标记问题。验证标准：诊断回归测试通过。","status":"red_test_reproduced"}
+﻿{
+    "bug_id":  "BUG-022",
+    "number":  22,
+    "task_type":  "diagnosis",
+    "bug_type":  "nil",
+    "business_domain":  "capacity assessment",
+    "green_branch":  "bug22_green",
+    "g1_sha":  "dd78ebe73e4f2c576636e090aba492cc6a8c843b",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "容量评估缺少进口道配置时，必须返回可诊断结果而不能发生空指针崩溃。",
+    "red_branch":  "bug22_red",
+    "red_sha":  "79327071c314d7c09f5c7dbea1e4c8348b76d368",
+    "verify_cmds":  [
+                        "go test ./internal/capacity -count=1 -run TestAssessConfiguredReportsMissingApproach"
+                    ],
+    "gold_root_cause":  "中文根因：AssessConfigured 将缺失的 ApproachInput 指针直接解引用。生产文件/符号：internal/capacity/service.go 的 Service.AssessConfigured。调用链：路口配置查询 → AssessConfigured → Assess。失效原因：缺失进口道配置应转为诊断结果，却在解引用 nil 时 panic。证据：红测传入 nil 后复现 nil pointer panic。",
+    "success_criteria":  "目标行为：缺失配置返回可诊断结果而非 panic。边界：nil、单进口道、多进口道和默认配时均稳定。合法场景：合法配置正常计算容量，缺失配置明确标记问题。验证标准：诊断回归测试通过。",
+    "status":  "red_test_reproduced"
+}

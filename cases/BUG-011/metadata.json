@@ -7,7 +7,7 @@
     "green_branch":  "bug11_green",
     "g1_sha":  "4fee8c29fa76158fcc9e71f3070814b09ba11166",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.",
+    "user_query":  "过期心跳到达时，已禁用的信号设备不得被错误恢复。",
     "red_branch":  "bug11_red",
     "red_sha":  "e75343f15a1a138b68621ed51e925ca550d6d4ad",
     "verify_cmds":  [

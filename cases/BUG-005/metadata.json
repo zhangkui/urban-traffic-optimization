@@ -7,7 +7,7 @@
     "green_branch":  "bug5_green",
     "g1_sha":  "c3e0ef3b7bcac19e6d9017b8df6654503e2c202d",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Stop a cancelled simulation promptly and prevent cancelled work from writing a completed result.",
+    "user_query":  "仿真请求被取消后，正在运行的仿真任务必须及时停止。",
     "red_branch":  "bug5_red",
     "red_sha":  "c3fd36371a10cf5526e59e191dc83015e782ba46",
     "verify_cmds":  [
