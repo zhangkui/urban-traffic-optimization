@@ -8,6 +8,12 @@
     "g1_sha":  "18c7097b7770541f04d5e618af0ca8803677a9bd",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Copy signal phases deeply so changing movements in a copied phase does not mutate the original timing plan.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug8_red",
+    "red_sha":  "9a0c23b35df265c97cf8dd83cdbdf5c05e4b0adc",
+    "verify_cmds":  [
+                        "go test ./internal/signal -count=1 -run TestCopyPlanDeepCopiesPhaseMovements"
+                    ],
+    "gold_root_cause":  "中文根因：复制配时方案时只复制了 phases 外层切片，没有复制每个 SignalPhase.Movements 的底层数组。生产文件/符号：internal/signal/service.go 的 CopyPlan。调用链：方案复制 → CopyPlan → phases 浅拷贝 → movements 共享 backing array。失效原因：修改复制方案的放行方向会同步改变原方案，造成已审核方案配置被意外污染。证据：bug8_red 回归测试修改复制方案的第一个 movement 后，原方案值从 north-through 变成 east-through。",
+    "success_criteria":  "目标行为：复制配时方案必须深拷贝相位及其放行方向切片。边界：空 movements、多相位、多方向和重复修改都不能影响源方案。合法场景：修改副本 movements 后原方案仍保持原始放行方向。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
