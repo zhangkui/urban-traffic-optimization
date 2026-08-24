@@ -16,3 +16,7 @@
 - go build ./...：PASS
 - 模型轨迹：未生成，不能伪造
 - GitHub 上传：阻塞，远程返回 Repository not found
+
+- GitHub 仓库：公开，https://github.com/zhangkui/urban-traffic-optimization
+- 已上传分支：main + 50 个 bug green/red 分支
+
