@@ -1,16 +1,18 @@
 ﻿# Final Delivery Status
 
-- Project: urban-traffic-optimization
-- Checked: 2026-08-24
-- Main commit: a7a4ad68da0f3acbea177b61bb405b48279e0a17
-- Green branches: 25
-- Red branches: 25
-- go test ./...: PASS
-- go test -race ./...: PASS
-- go vet ./...: PASS
-- go build ./...: PASS
-- Local 25-case Stage8 checklist: PASS
-- Red verify summary: 25/25 expected failures
-- Model trajectories: BLOCKED; no real JSONL execution traces available
-- GitHub upload: BLOCKED; authenticated ls-remote returned Repository not found
-- Original stage8_check.py: BLOCKED; local script has syntax corruption
+- 项目：urban-traffic-optimization
+- 日期：2026-08-24
+- 题目数量：25
+- 题面语言：中文
+- 任务分布：bugfix 15，diagnosis 10
+- Bug 类型：concurrency/nil/slice/error/context 各 5
+- 本地 Stage8 检查：PASS
+- 中文 user_query 相似度检查：PASS
+- 出题包解析回归：25/25 PASS
+- Red 分支验证：25/25 按预期失败
+- go test ./...：PASS
+- go test -race ./...：PASS
+- go vet ./...：PASS
+- go build ./...：PASS
+- 模型轨迹：未生成，不能伪造
+- GitHub 上传：阻塞，远程返回 Repository not found

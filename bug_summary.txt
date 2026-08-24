@@ -1,26 +1,26 @@
 number	bug_id	task_type	bug_type	green_branch	red_branch	red_sha	status	user_query
-1	BUG-001	bugfix	concurrency	bug1_green	bug1_red	56781f4fcdf740bfa9e73588f5c6597fc7984d7a	red_test_reproduced	When multiple sensors report traffic for the same intersection at the same time, aggregate the readings without losing vehicle volume or corrupting the average speed.
-2	BUG-002	diagnosis	nil	bug2_green	bug2_red	98cede4e55d0f10ec4901125fd0bb93f0c83ab9c	red_test_reproduced	Find why querying an offline device without a heartbeat record can crash the device status endpoint, and identify the safe behavior.
-3	BUG-003	bugfix	slice	bug3_green	bug3_red	31d1a3935f02a9958bdc21fae2e58d196ad9d0d9	red_test_reproduced	Make repeated reachable-road queries return independent paths without one query changing the result of another query.
-4	BUG-004	diagnosis	error	bug4_green	bug4_red	25d3bf5a8bcc3ebe766bea79ea8b28d13de05fc6	red_test_reproduced	Find why a timing-plan approval failure loses its business error code and explain how the handler should preserve it.
-5	BUG-005	bugfix	context	bug5_green	bug5_red	c3fd36371a10cf5526e59e191dc83015e782ba46	red_test_reproduced	Stop a cancelled simulation promptly and prevent cancelled work from writing a completed result.
-6	BUG-006	bugfix	concurrency	bug6_green	bug6_red	98f96957ed9aa16c4286b9c9d377b8c5501125d4	red_test_reproduced	Ensure concurrent congestion threshold evaluations create only one active event for the same intersection and condition.
-7	BUG-007	diagnosis	nil	bug7_green	bug7_red	d2ac03f166f4ca2034c9e05b0dd8868e42f69855	red_test_reproduced	Find why optimization recommendation can dereference a missing baseline plan and define the expected empty-result behavior.
-8	BUG-008	bugfix	slice	bug8_green	bug8_red	9a0c23b35df265c97cf8dd83cdbdf5c05e4b0adc	red_test_reproduced	Copy signal phases deeply so changing movements in a copied phase does not mutate the original timing plan.
-9	BUG-009	diagnosis	error	bug9_green	bug9_red	f16bd65d4f21543856df24c87bcdaf8343063e60	red_test_reproduced	Find why a failed CSV writer can still produce a successful export response and identify the missing error propagation.
-10	BUG-010	bugfix	context	bug10_green	bug10_red	0dd8a4656ce79187a2525518775abd07e5cb28f8	red_test_reproduced	Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.
-11	BUG-011	bugfix	concurrency	bug11_green	bug11_red	e75343f15a1a138b68621ed51e925ca550d6d4ad	red_test_reproduced	Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.
-12	BUG-012	diagnosis	nil	bug12_green	bug12_red	6c1732d9adeb954bc3e9173579d2bc77aa99180f	red_test_reproduced	Find why calculating metrics for an intersection with no traffic samples can access an absent aggregate and define safe zero metrics.
-13	BUG-013	bugfix	slice	bug13_green	bug13_red	a80fbee5af1c4111fef0dba9a0460daf3346ccee	red_test_reproduced	Make OD matrix filtering return a new pair slice so filtering a report cannot modify the stored matrix.
-14	BUG-014	diagnosis	error	bug14_green	bug14_red	6825ac7d96705625d4af162c81ae6b57a8a982d5	red_test_reproduced	Find why invalid weather observations are silently replaced with default weather and explain how validation errors should surface.
-15	BUG-015	bugfix	context	bug15_green	bug15_red	b67b25f2f47314befb6e9b85f66d635b8272e881	red_test_reproduced	Release a timed-out background job and its queue slot when the job context expires.
-16	BUG-016	diagnosis	concurrency	bug16_green	bug16_red	862b0d0c9bad11d2a5cb3a6be18357d91ae61acb	red_test_reproduced	Find why concurrent corridor offset updates can expose a partially updated plan to readers.
-17	BUG-017	bugfix	nil	bug17_green	bug17_red	7695c64f9549d72e6d045d403ec8371adcfac0e9	red_test_reproduced	Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.
-18	BUG-018	bugfix	error	bug18_green	bug18_red	d17dd045c77c6dc338d23c665c10bd7cdb559835	red_test_reproduced	Keep event response state consistent when one action fails while a multi-action response plan is being applied.
-19	BUG-019	diagnosis	slice	bug19_green	bug19_red	99d0dac7a4e830bd8bf7ca2769086f557bdc758b	red_test_reproduced	Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.
-20	BUG-020	bugfix	context	bug20_green	bug20_red	93e6a240d6bcbca63c3d66c4eb68102263b86eda	red_test_reproduced	Do not publish an expired forecast result after the request context has been cancelled.
-21	BUG-021	bugfix	concurrency	bug21_green	bug21_red	78ec590c96a429ceed7260d7da6f02ac10275122	red_test_reproduced	Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.
-22	BUG-022	diagnosis	nil	bug22_green	bug22_red	79327071c314d7c09f5c7dbea1e4c8348b76d368	red_test_reproduced	Find why capacity assessment can access a missing approach configuration and define the expected diagnostic result.
-23	BUG-023	bugfix	error	bug23_green	bug23_red	9bf252bbc1f64d99ef81432526e978b509b8ec69	red_test_reproduced	Return an explicit error for an unknown vehicle emission factor instead of silently omitting the vehicle.
-24	BUG-024	diagnosis	context	bug24_green	bug24_red	c0d61cb8268f26345123efc56022d32877630d74	red_test_reproduced	Find why an expired priority request may still be granted by a delayed decision task.
-25	BUG-025	bugfix	slice	bug25_green	bug25_red	2a235944b859310277524c384858193439e3577c	red_test_reproduced	Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.
+1	BUG-001	bugfix	concurrency	bug1_green	bug1_red	56781f4fcdf740bfa9e73588f5c6597fc7984d7a	red_test_reproduced	修复并发交通流量聚合导致路口流量快照损坏的问题。
+2	BUG-002	diagnosis	nil	bug2_green	bug2_red	98cede4e55d0f10ec4901125fd0bb93f0c83ab9c	red_test_reproduced	设备没有心跳记录时，安排下一次巡检不得发生空指针崩溃。
+3	BUG-003	bugfix	slice	bug3_green	bug3_red	31d1a3935f02a9958bdc21fae2e58d196ad9d0d9	red_test_reproduced	路网可达性分析返回结果后，不得继续污染原始道路列表。
+4	BUG-004	diagnosis	error	bug4_green	bug4_red	25d3bf5a8bcc3ebe766bea79ea8b28d13de05fc6	red_test_reproduced	配时方案审核失败时必须返回错误，不能静默接受无效审核。
+5	BUG-005	bugfix	context	bug5_green	bug5_red	c3fd36371a10cf5526e59e191dc83015e782ba46	red_test_reproduced	仿真请求被取消后，正在运行的仿真任务必须及时停止。
+6	BUG-006	bugfix	concurrency	bug6_green	bug6_red	98f96957ed9aa16c4286b9c9d377b8c5501125d4	red_test_reproduced	多个网关同时上报时，批量更新设备状态必须保证并发安全。
+7	BUG-007	diagnosis	nil	bug7_green	bug7_red	d2ac03f166f4ca2034c9e05b0dd8868e42f69855	red_test_reproduced	没有巡检记录时，维护状态计算不能索引空切片。
+8	BUG-008	bugfix	slice	bug8_green	bug8_red	9a0c23b35df265c97cf8dd83cdbdf5c05e4b0adc	red_test_reproduced	复制信号配置后，相位放行方向必须与原方案相互独立。
+9	BUG-009	diagnosis	error	bug9_green	bug9_red	f16bd65d4f21543856df24c87bcdaf8343063e60	red_test_reproduced	交通 CSV 导出写入失败时，接口必须返回明确错误。
+10	BUG-010	bugfix	context	bug10_green	bug10_red	0dd8a4656ce79187a2525518775abd07e5cb28f8	red_test_reproduced	客户端断开后，实时 SSE 交通流发送不能永久阻塞。
+11	BUG-011	bugfix	concurrency	bug11_green	bug11_red	e75343f15a1a138b68621ed51e925ca550d6d4ad	red_test_reproduced	过期心跳到达时，已禁用的信号设备不得被错误恢复。
+12	BUG-012	diagnosis	nil	bug12_green	bug12_red	6c1732d9adeb954bc3e9173579d2bc77aa99180f	red_test_reproduced	路口没有交通样本时，指标计算必须返回安全的空结果。
+13	BUG-013	bugfix	slice	bug13_green	bug13_red	a80fbee5af1c4111fef0dba9a0460daf3346ccee	red_test_reproduced	筛选 OD 矩阵时，不得修改调用方持有的原始观测数据。
+14	BUG-014	diagnosis	error	bug14_green	bug14_red	6825ac7d96705625d4af162c81ae6b57a8a982d5	red_test_reproduced	天气观测字段非法时，系统必须拒绝数据而不是静默替换默认值。
+15	BUG-015	bugfix	context	bug15_green	bug15_red	b67b25f2f47314befb6e9b85f66d635b8272e881	red_test_reproduced	后台交通任务超过截止时间后，必须通过 context 取消执行。
+16	BUG-016	diagnosis	concurrency	bug16_green	bug16_red	862b0d0c9bad11d2a5cb3a6be18357d91ae61acb	red_test_reproduced	干线协调发布 offset 时，并发读取者必须看到完整一致的快照。
+17	BUG-017	bugfix	nil	bug17_green	bug17_red	7695c64f9549d72e6d045d403ec8371adcfac0e9	red_test_reproduced	设备查询结果为空时，安排巡检必须安全处理而不能解引用 nil。
+18	BUG-018	bugfix	error	bug18_green	bug18_red	d17dd045c77c6dc338d23c665c10bd7cdb559835	red_test_reproduced	事件响应计划中后续动作失败时，之前已启动的动作必须回滚。
+19	BUG-019	diagnosis	slice	bug19_green	bug19_red	99d0dac7a4e830bd8bf7ca2769086f557bdc758b	red_test_reproduced	合规结果排序不能改变调用方拥有的 accepted 切片顺序。
+20	BUG-020	bugfix	context	bug20_green	bug20_red	93e6a240d6bcbca63c3d66c4eb68102263b86eda	red_test_reproduced	交通预测请求过期或取消后，系统不得继续发布预测结果。
+21	BUG-021	bugfix	concurrency	bug21_green	bug21_red	78ec590c96a429ceed7260d7da6f02ac10275122	red_test_reproduced	自适应信号并发更新时，较新的配时方案版本不能被旧写入覆盖。
+22	BUG-022	diagnosis	nil	bug22_green	bug22_red	79327071c314d7c09f5c7dbea1e4c8348b76d368	red_test_reproduced	容量评估缺少进口道配置时，必须返回可诊断结果而不能发生空指针崩溃。
+23	BUG-023	bugfix	error	bug23_green	bug23_red	9bf252bbc1f64d99ef81432526e978b509b8ec69	red_test_reproduced	遇到未知车型排放因子时，排放报表必须返回明确错误。
+24	BUG-024	diagnosis	context	bug24_green	bug24_red	c0d61cb8268f26345123efc56022d32877630d74	red_test_reproduced	延迟执行的优先控制任务不得授予已经取消的紧急请求。
+25	BUG-025	bugfix	slice	bug25_green	bug25_red	2a235944b859310277524c384858193439e3577c	red_test_reproduced	地理围栏重复评估时，新告警不得覆盖历史告警记录。
