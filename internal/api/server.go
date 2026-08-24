@@ -5,6 +5,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/zhangkui/urban-traffic-optimization/internal/adaptive"
+	"github.com/zhangkui/urban-traffic-optimization/internal/calendar"
+	"github.com/zhangkui/urban-traffic-optimization/internal/corridor"
+	"github.com/zhangkui/urban-traffic-optimization/internal/geofence"
+	"github.com/zhangkui/urban-traffic-optimization/internal/maintenance"
 	"net/http"
 	"strconv"
 	"strings"
@@ -33,11 +38,16 @@ type Server struct {
 	simulations   *simulation.Service
 	optimizations *optimization.Service
 	dashboard     *dashboard.Service
+	corridors     *corridor.Service
+	adaptive      *adaptive.Service
+	maintenance   *maintenance.Service
+	zones         *geofence.Service
+	calendars     *calendar.Service
 	ids           atomic.Uint64
 }
 
 func New(s *store.Store, h *realtime.Hub) *Server {
-	return &Server{store: s, hub: h, roads: road.NewService(s), signals: signal.NewService(s), traffic: traffic.NewService(s), events: event.NewService(s), simulations: simulation.NewService(s), optimizations: optimization.NewService(s), dashboard: dashboard.NewService(s)}
+	return &Server{store: s, hub: h, roads: road.NewService(s), signals: signal.NewService(s), traffic: traffic.NewService(s), events: event.NewService(s), simulations: simulation.NewService(s), optimizations: optimization.NewService(s), dashboard: dashboard.NewService(s), corridors: corridor.NewService(), adaptive: adaptive.NewService(), maintenance: maintenance.NewService(), zones: geofence.NewService(), calendars: calendar.NewService()}
 }
 
 func (s *Server) Handler() http.Handler {
@@ -52,6 +62,10 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("/api/v1/events", s.eventsHandler)
 	mux.HandleFunc("/api/v1/simulations", s.simulationHandler)
 	mux.HandleFunc("/api/v1/optimization/candidates", s.optimizationHandler)
+	mux.HandleFunc("/api/v1/corridors", s.corridorHandler)
+	mux.HandleFunc("/api/v1/geofences", s.geofenceHandler)
+	mux.HandleFunc("/api/v1/maintenance/inspections", s.inspectionHandler)
+	mux.HandleFunc("/api/v1/signal/adaptive/decisions", s.adaptiveHandler)
 	mux.Handle("/api/v1/stream", s.hub)
 	return cors(mux)
 }
@@ -332,4 +346,95 @@ func (s *Server) genericCollection(kind string) http.HandlerFunc {
 		s.hub.Publish(kind+".updated", value)
 		write(w, 201, value)
 	}
+}
+
+func (s *Server) corridorHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodGet {
+		write(w, http.StatusOK, s.corridors.List(r.URL.Query().Get("status")))
+		return
+	}
+	if r.Method != http.MethodPost {
+		fail(w, http.StatusMethodNotAllowed, errors.New("method not allowed"))
+		return
+	}
+	var item corridor.Corridor
+	if err := decode(r, &item); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	if item.ID == "" {
+		item.ID = fmt.Sprintf("corridor-%06d", s.ids.Add(1))
+	}
+	if err := s.corridors.Create(item); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	write(w, http.StatusCreated, item)
+}
+
+func (s *Server) geofenceHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodGet {
+		write(w, http.StatusOK, map[string]any{"zones": s.zones.Zones(), "rules": s.zones.Rules(r.URL.Query().Get("zoneId"))})
+		return
+	}
+	if r.Method != http.MethodPost {
+		fail(w, http.StatusMethodNotAllowed, errors.New("method not allowed"))
+		return
+	}
+	var item geofence.Zone
+	if err := decode(r, &item); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	if item.ID == "" {
+		item.ID = fmt.Sprintf("zone-%06d", s.ids.Add(1))
+	}
+	if err := s.zones.AddZone(item); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	write(w, http.StatusCreated, item)
+}
+
+func (s *Server) inspectionHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodGet {
+		write(w, http.StatusOK, s.maintenance.List(r.URL.Query().Get("deviceId"), r.URL.Query().Get("status")))
+		return
+	}
+	if r.Method != http.MethodPost {
+		fail(w, http.StatusMethodNotAllowed, errors.New("method not allowed"))
+		return
+	}
+	var input struct {
+		Device    domain.Device `json:"device"`
+		Inspector string        `json:"inspector"`
+		At        time.Time     `json:"at"`
+	}
+	if err := decode(r, &input); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	write(w, http.StatusCreated, s.maintenance.Schedule(input.Device, input.Inspector, input.At))
+}
+
+func (s *Server) adaptiveHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		fail(w, http.StatusMethodNotAllowed, errors.New("method not allowed"))
+		return
+	}
+	var input struct {
+		Controller adaptive.Controller     `json:"controller"`
+		Phases     []domain.SignalPhase    `json:"phases"`
+		Readings   []domain.TrafficReading `json:"readings"`
+	}
+	if err := decode(r, &input); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	if err := s.adaptive.Register(input.Controller); err != nil {
+		fail(w, http.StatusBadRequest, err)
+		return
+	}
+	controller, _ := s.adaptive.Get(input.Controller.ID)
+	write(w, http.StatusOK, s.adaptive.Decide(controller, input.Phases, input.Readings))
 }
