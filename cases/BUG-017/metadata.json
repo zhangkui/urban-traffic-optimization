@@ -1,13 +1,19 @@
 ﻿{
-    "bug_id":  "BUG-017",
-    "number":  17,
-    "task_type":  "bugfix",
-    "bug_type":  "nil",
-    "business_domain":  "device inspection",
-    "green_branch":  "bug17_green",
-    "g1_sha":  "c234c974e9bea8aba080a01006e0267b18aab179",
-    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.",
-    "status":  "red_test_reproduced",
-    "red_branch":  "bug17_red"
+  "bug_id": "BUG-017",
+  "number": 17,
+  "task_type": "bugfix",
+  "bug_type": "nil",
+  "business_domain": "device inspection",
+  "green_branch": "bug17_green",
+  "g1_sha": "c234c974e9bea8aba080a01006e0267b18aab179",
+  "go_version": "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+  "user_query": "Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.",
+  "red_branch": "bug17_red",
+  "red_sha": "7695c64f9549d72e6d045d403ec8371adcfac0e9",
+  "verify_cmds": [
+    "go test ./internal/maintenance -count=1 -run TestScheduleFromLookupHandlesMissingDevice"
+  ],
+  "gold_root_cause": "中文根因：巡检安排入口直接解引用设备查询结果，缺失设备时传入 nil。生产文件/符号：internal/maintenance/service.go 的 Service.ScheduleFromLookup。调用链：设备查询 → ScheduleFromLookup → Schedule(*device)。失效原因：设备不存在不是合法 Device 值，直接解引用触发 nil pointer panic，调用方无法获得可处理结果。证据：bug17_red 的 TestScheduleFromLookupHandlesMissingDevice 传入 nil 后稳定复现 runtime error: invalid memory address or nil pointer dereference。",
+  "success_criteria": "目标行为：设备查询为空时安排巡检不应 panic，并应返回明确的缺失设备结果。边界：nil 设备、正常设备、零时间和重复调用都需行为稳定。合法场景：设备存在时生成 scheduled 巡检并保留设备 ID；设备缺失时安全返回且不写入巡检记录。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+  "status": "red_test_reproduced"
 }
