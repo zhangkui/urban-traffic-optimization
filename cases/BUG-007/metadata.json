@@ -8,6 +8,12 @@
     "g1_sha":  "d9c33f2a6394eff32c18d780740498121f5fd6cb",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Find why optimization recommendation can dereference a missing baseline plan and define the expected empty-result behavior.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug7_red",
+    "red_sha":  "d2ac03f166f4ca2034c9e05b0dd8868e42f69855",
+    "verify_cmds":  [
+                        "go test ./internal/maintenance -count=1 -run TestLatestScoreWithoutInspectionReturnsZero"
+                    ],
+    "gold_root_cause":  "中文根因：LatestScore 假设设备一定存在巡检记录，直接访问空 List 结果的第一个元素。生产文件/符号：internal/maintenance/service.go 的 Service.LatestScore。调用链：设备健康评分查询 → LatestScore → List → items[0]。失效原因：新设备或尚未安排巡检的设备返回空切片，直接索引触发 index out of range。证据：bug7_red 回归测试在无巡检记录设备上报告 runtime error: index out of range [0] with length 0。",
+    "success_criteria":  "目标行为：没有巡检记录时健康评分查询应返回安全默认值 0，不得崩溃。边界：无记录、单条记录、多条记录和指定状态筛选均需正确处理。合法场景：设备尚未安排巡检时 LatestScore 返回 0。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
