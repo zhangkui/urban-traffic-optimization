@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-014",
+    "number":  14,
+    "task_type":  "diagnosis",
+    "bug_type":  "error",
+    "business_domain":  "weather adjustment",
+    "green_branch":  "bug14_green",
+    "g1_sha":  "4dd278abf6fbec8c012d4293e4bf2c88627414a1",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why invalid weather observations are silently replaced with default weather and explain how validation errors should surface.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

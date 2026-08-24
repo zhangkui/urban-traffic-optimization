@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-004",
+    "number":  4,
+    "task_type":  "diagnosis",
+    "bug_type":  "error",
+    "business_domain":  "timing approval",
+    "green_branch":  "bug4_green",
+    "g1_sha":  "4ddd8e917469e19ee7e19d3b5ae008d9bbf1bb26",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why a timing-plan approval failure loses its business error code and explain how the handler should preserve it.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

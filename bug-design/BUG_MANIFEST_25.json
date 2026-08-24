@@ -6,9 +6,7 @@
         "bug_type":  "concurrency",
         "business_domain":  "real-time traffic aggregation",
         "green_branch":  "bug1_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "77f5ec89860396e77b91b55efb181d8e2ab3b3c1",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "When multiple sensors report traffic for the same intersection at the same time, aggregate the readings without losing vehicle volume or corrupting the average speed.",
         "status":  "designed",
@@ -21,9 +19,7 @@
         "bug_type":  "nil",
         "business_domain":  "device heartbeat",
         "green_branch":  "bug2_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "2d430b091280e62a274cb34fdfa1ec7b02b43e5b",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why querying an offline device without a heartbeat record can crash the device status endpoint, and identify the safe behavior.",
         "status":  "designed",
@@ -36,9 +32,7 @@
         "bug_type":  "slice",
         "business_domain":  "road topology",
         "green_branch":  "bug3_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "5daad778247714e42921b9b253642dc0708c7c72",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Make repeated reachable-road queries return independent paths without one query changing the result of another query.",
         "status":  "designed",
@@ -51,9 +45,7 @@
         "bug_type":  "error",
         "business_domain":  "timing approval",
         "green_branch":  "bug4_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "4ddd8e917469e19ee7e19d3b5ae008d9bbf1bb26",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why a timing-plan approval failure loses its business error code and explain how the handler should preserve it.",
         "status":  "designed",
@@ -66,9 +58,7 @@
         "bug_type":  "context",
         "business_domain":  "simulation",
         "green_branch":  "bug5_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "c3e0ef3b7bcac19e6d9017b8df6654503e2c202d",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Stop a cancelled simulation promptly and prevent cancelled work from writing a completed result.",
         "status":  "designed",
@@ -81,9 +71,7 @@
         "bug_type":  "concurrency",
         "business_domain":  "congestion events",
         "green_branch":  "bug6_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "66dee6d1fb3754137013b2a5ce140b2f9302aeaa",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Ensure concurrent congestion threshold evaluations create only one active event for the same intersection and condition.",
         "status":  "designed",
@@ -96,9 +84,7 @@
         "bug_type":  "nil",
         "business_domain":  "optimization",
         "green_branch":  "bug7_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "d9c33f2a6394eff32c18d780740498121f5fd6cb",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why optimization recommendation can dereference a missing baseline plan and define the expected empty-result behavior.",
         "status":  "designed",
@@ -111,9 +97,7 @@
         "bug_type":  "slice",
         "business_domain":  "signal phases",
         "green_branch":  "bug8_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "18c7097b7770541f04d5e618af0ca8803677a9bd",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Copy signal phases deeply so changing movements in a copied phase does not mutate the original timing plan.",
         "status":  "designed",
@@ -126,9 +110,7 @@
         "bug_type":  "error",
         "business_domain":  "CSV reports",
         "green_branch":  "bug9_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "b17b242528c4465fecc716da3e0b5dd107c123b5",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why a failed CSV writer can still produce a successful export response and identify the missing error propagation.",
         "status":  "designed",
@@ -141,9 +123,7 @@
         "bug_type":  "context",
         "business_domain":  "live dashboard SSE",
         "green_branch":  "bug10_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "f816278aa3341a75b665195e35f75087837e8736",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.",
         "status":  "designed",
@@ -156,9 +136,7 @@
         "bug_type":  "concurrency",
         "business_domain":  "device state",
         "green_branch":  "bug11_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "4fee8c29fa76158fcc9e71f3070814b09ba11166",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.",
         "status":  "designed",
@@ -171,9 +149,7 @@
         "bug_type":  "nil",
         "business_domain":  "intersection metrics",
         "green_branch":  "bug12_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "b9518ac4e5764d63efce09799a0d1015d97e1a87",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why calculating metrics for an intersection with no traffic samples can access an absent aggregate and define safe zero metrics.",
         "status":  "designed",
@@ -186,9 +162,7 @@
         "bug_type":  "slice",
         "business_domain":  "OD demand matrix",
         "green_branch":  "bug13_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "d70ec7dac999a4164f0e4d55058240c80c9f50cb",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Make OD matrix filtering return a new pair slice so filtering a report cannot modify the stored matrix.",
         "status":  "designed",
@@ -201,9 +175,7 @@
         "bug_type":  "error",
         "business_domain":  "weather adjustment",
         "green_branch":  "bug14_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "4dd278abf6fbec8c012d4293e4bf2c88627414a1",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why invalid weather observations are silently replaced with default weather and explain how validation errors should surface.",
         "status":  "designed",
@@ -216,9 +188,7 @@
         "bug_type":  "context",
         "business_domain":  "background jobs",
         "green_branch":  "bug15_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "436bb72cdca4800c7f905d589b3422232ff25cda",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Release a timed-out background job and its queue slot when the job context expires.",
         "status":  "designed",
@@ -231,9 +201,7 @@
         "bug_type":  "concurrency",
         "business_domain":  "corridor coordination",
         "green_branch":  "bug16_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "7d824ee9e82cb1488bec8f54fd64c195bca50e7e",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why concurrent corridor offset updates can expose a partially updated plan to readers.",
         "status":  "designed",
@@ -246,9 +214,7 @@
         "bug_type":  "nil",
         "business_domain":  "device inspection",
         "green_branch":  "bug17_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "c234c974e9bea8aba080a01006e0267b18aab179",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.",
         "status":  "designed",
@@ -261,9 +227,7 @@
         "bug_type":  "error",
         "business_domain":  "incident response",
         "green_branch":  "bug18_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "3be629321662fdefde09951ed2caf5072230e083",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Keep event response state consistent when one action fails while a multi-action response plan is being applied.",
         "status":  "designed",
@@ -276,9 +240,7 @@
         "bug_type":  "slice",
         "business_domain":  "compliance review",
         "green_branch":  "bug19_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "218ec099b55918302ff7d0e8f4efeab11e78cdd6",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.",
         "status":  "designed",
@@ -291,9 +253,7 @@
         "bug_type":  "context",
         "business_domain":  "traffic forecast",
         "green_branch":  "bug20_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "c056b90f484106411f025441fa6c2e7e52930673",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Do not publish an expired forecast result after the request context has been cancelled.",
         "status":  "designed",
@@ -306,9 +266,7 @@
         "bug_type":  "concurrency",
         "business_domain":  "adaptive signal",
         "green_branch":  "bug21_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "66d4b17f18b26b1f5b496b1def794affd6693800",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.",
         "status":  "designed",
@@ -321,9 +279,7 @@
         "bug_type":  "nil",
         "business_domain":  "capacity assessment",
         "green_branch":  "bug22_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "dd78ebe73e4f2c576636e090aba492cc6a8c843b",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why capacity assessment can access a missing approach configuration and define the expected diagnostic result.",
         "status":  "designed",
@@ -336,9 +292,7 @@
         "bug_type":  "error",
         "business_domain":  "emission report",
         "green_branch":  "bug23_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "9ea707f2951c48fb8d455281fa6e3b96e818b012",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Return an explicit error for an unknown vehicle emission factor instead of silently omitting the vehicle.",
         "status":  "designed",
@@ -351,9 +305,7 @@
         "bug_type":  "context",
         "business_domain":  "priority control",
         "green_branch":  "bug24_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "4ce3554e364e3c31230d1c9a6f302d3ea78a4b0e",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Find why an expired priority request may still be granted by a delayed decision task.",
         "status":  "designed",
@@ -366,9 +318,7 @@
         "bug_type":  "slice",
         "business_domain":  "geofence alerts",
         "green_branch":  "bug25_green",
-        "g1_sha":  {
-
-                   },
+        "g1_sha":  "3412f5ca94b630b93e37abc683f3aea81389338d",
         "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
         "user_query":  "Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.",
         "status":  "designed",

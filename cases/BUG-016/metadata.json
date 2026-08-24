@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-016",
+    "number":  16,
+    "task_type":  "diagnosis",
+    "bug_type":  "concurrency",
+    "business_domain":  "corridor coordination",
+    "green_branch":  "bug16_green",
+    "g1_sha":  "7d824ee9e82cb1488bec8f54fd64c195bca50e7e",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why concurrent corridor offset updates can expose a partially updated plan to readers.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

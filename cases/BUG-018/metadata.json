@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-018",
+    "number":  18,
+    "task_type":  "bugfix",
+    "bug_type":  "error",
+    "business_domain":  "incident response",
+    "green_branch":  "bug18_green",
+    "g1_sha":  "3be629321662fdefde09951ed2caf5072230e083",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Keep event response state consistent when one action fails while a multi-action response plan is being applied.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

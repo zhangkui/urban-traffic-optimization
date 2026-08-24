@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-010",
+    "number":  10,
+    "task_type":  "bugfix",
+    "bug_type":  "context",
+    "business_domain":  "live dashboard SSE",
+    "green_branch":  "bug10_green",
+    "g1_sha":  "f816278aa3341a75b665195e35f75087837e8736",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

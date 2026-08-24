@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-017",
+    "number":  17,
+    "task_type":  "bugfix",
+    "bug_type":  "nil",
+    "business_domain":  "device inspection",
+    "green_branch":  "bug17_green",
+    "g1_sha":  "c234c974e9bea8aba080a01006e0267b18aab179",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

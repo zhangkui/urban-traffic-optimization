@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-011",
+    "number":  11,
+    "task_type":  "bugfix",
+    "bug_type":  "concurrency",
+    "business_domain":  "device state",
+    "green_branch":  "bug11_green",
+    "g1_sha":  "4fee8c29fa76158fcc9e71f3070814b09ba11166",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

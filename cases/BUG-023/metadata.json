@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-023",
+    "number":  23,
+    "task_type":  "bugfix",
+    "bug_type":  "error",
+    "business_domain":  "emission report",
+    "green_branch":  "bug23_green",
+    "g1_sha":  "9ea707f2951c48fb8d455281fa6e3b96e818b012",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Return an explicit error for an unknown vehicle emission factor instead of silently omitting the vehicle.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

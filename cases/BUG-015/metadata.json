@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-015",
+    "number":  15,
+    "task_type":  "bugfix",
+    "bug_type":  "context",
+    "business_domain":  "background jobs",
+    "green_branch":  "bug15_green",
+    "g1_sha":  "436bb72cdca4800c7f905d589b3422232ff25cda",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Release a timed-out background job and its queue slot when the job context expires.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

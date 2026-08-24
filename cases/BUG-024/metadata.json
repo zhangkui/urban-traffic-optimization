@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-024",
+    "number":  24,
+    "task_type":  "diagnosis",
+    "bug_type":  "context",
+    "business_domain":  "priority control",
+    "green_branch":  "bug24_green",
+    "g1_sha":  "4ce3554e364e3c31230d1c9a6f302d3ea78a4b0e",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why an expired priority request may still be granted by a delayed decision task.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

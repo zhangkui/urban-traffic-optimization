@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-008",
+    "number":  8,
+    "task_type":  "bugfix",
+    "bug_type":  "slice",
+    "business_domain":  "signal phases",
+    "green_branch":  "bug8_green",
+    "g1_sha":  "18c7097b7770541f04d5e618af0ca8803677a9bd",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Copy signal phases deeply so changing movements in a copied phase does not mutate the original timing plan.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

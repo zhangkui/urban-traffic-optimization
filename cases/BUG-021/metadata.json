@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-021",
+    "number":  21,
+    "task_type":  "bugfix",
+    "bug_type":  "concurrency",
+    "business_domain":  "adaptive signal",
+    "green_branch":  "bug21_green",
+    "g1_sha":  "66d4b17f18b26b1f5b496b1def794affd6693800",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-002",
+    "number":  2,
+    "task_type":  "diagnosis",
+    "bug_type":  "nil",
+    "business_domain":  "device heartbeat",
+    "green_branch":  "bug2_green",
+    "g1_sha":  "2d430b091280e62a274cb34fdfa1ec7b02b43e5b",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why querying an offline device without a heartbeat record can crash the device status endpoint, and identify the safe behavior.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

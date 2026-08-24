@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-019",
+    "number":  19,
+    "task_type":  "diagnosis",
+    "bug_type":  "slice",
+    "business_domain":  "compliance review",
+    "green_branch":  "bug19_green",
+    "g1_sha":  "218ec099b55918302ff7d0e8f4efeab11e78cdd6",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

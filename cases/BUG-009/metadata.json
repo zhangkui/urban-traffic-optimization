@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-009",
+    "number":  9,
+    "task_type":  "diagnosis",
+    "bug_type":  "error",
+    "business_domain":  "CSV reports",
+    "green_branch":  "bug9_green",
+    "g1_sha":  "b17b242528c4465fecc716da3e0b5dd107c123b5",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why a failed CSV writer can still produce a successful export response and identify the missing error propagation.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-022",
+    "number":  22,
+    "task_type":  "diagnosis",
+    "bug_type":  "nil",
+    "business_domain":  "capacity assessment",
+    "green_branch":  "bug22_green",
+    "g1_sha":  "dd78ebe73e4f2c576636e090aba492cc6a8c843b",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why capacity assessment can access a missing approach configuration and define the expected diagnostic result.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

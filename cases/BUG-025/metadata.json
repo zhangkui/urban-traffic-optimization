@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-025",
+    "number":  25,
+    "task_type":  "bugfix",
+    "bug_type":  "slice",
+    "business_domain":  "geofence alerts",
+    "green_branch":  "bug25_green",
+    "g1_sha":  "3412f5ca94b630b93e37abc683f3aea81389338d",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

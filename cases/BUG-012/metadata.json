@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-012",
+    "number":  12,
+    "task_type":  "diagnosis",
+    "bug_type":  "nil",
+    "business_domain":  "intersection metrics",
+    "green_branch":  "bug12_green",
+    "g1_sha":  "b9518ac4e5764d63efce09799a0d1015d97e1a87",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why calculating metrics for an intersection with no traffic samples can access an absent aggregate and define safe zero metrics.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

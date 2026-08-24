@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-020",
+    "number":  20,
+    "task_type":  "bugfix",
+    "bug_type":  "context",
+    "business_domain":  "traffic forecast",
+    "green_branch":  "bug20_green",
+    "g1_sha":  "c056b90f484106411f025441fa6c2e7e52930673",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Do not publish an expired forecast result after the request context has been cancelled.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

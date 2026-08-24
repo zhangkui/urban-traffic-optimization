@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-006",
+    "number":  6,
+    "task_type":  "bugfix",
+    "bug_type":  "concurrency",
+    "business_domain":  "congestion events",
+    "green_branch":  "bug6_green",
+    "g1_sha":  "66dee6d1fb3754137013b2a5ce140b2f9302aeaa",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Ensure concurrent congestion threshold evaluations create only one active event for the same intersection and condition.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

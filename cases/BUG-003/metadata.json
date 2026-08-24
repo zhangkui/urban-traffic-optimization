@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-003",
+    "number":  3,
+    "task_type":  "bugfix",
+    "bug_type":  "slice",
+    "business_domain":  "road topology",
+    "green_branch":  "bug3_green",
+    "g1_sha":  "5daad778247714e42921b9b253642dc0708c7c72",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Make repeated reachable-road queries return independent paths without one query changing the result of another query.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "bug_id":  "BUG-007",
+    "number":  7,
+    "task_type":  "diagnosis",
+    "bug_type":  "nil",
+    "business_domain":  "optimization",
+    "green_branch":  "bug7_green",
+    "g1_sha":  "d9c33f2a6394eff32c18d780740498121f5fd6cb",
+    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+    "user_query":  "Find why optimization recommendation can dereference a missing baseline plan and define the expected empty-result behavior.",
+    "status":  "designed",
+    "red_branch":  "created during regression-test placement"
+}
