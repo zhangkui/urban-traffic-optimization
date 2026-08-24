@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Make OD matrix filtering return a new pair slice so filtering a report cannot modify the stored matrix.
+筛选 OD 矩阵时，不得修改调用方持有的原始观测数据。
 
 ## 验证命令（verify_cmds）
 ```bash

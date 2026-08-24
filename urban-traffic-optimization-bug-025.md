@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.
+地理围栏重复评估时，新告警不得覆盖历史告警记录。
 
 ## 验证命令（verify_cmds）
 ```bash

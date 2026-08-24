@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.
+过期心跳到达时，已禁用的信号设备不得被错误恢复。
 
 ## 验证命令（verify_cmds）
 ```bash

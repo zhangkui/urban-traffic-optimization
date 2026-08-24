@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why querying an offline device without a heartbeat record can crash the device status endpoint, and identify the safe behavior.
+设备没有心跳记录时，安排下一次巡检不得发生空指针崩溃。
 
 ## 验证命令（verify_cmds）
 ```bash

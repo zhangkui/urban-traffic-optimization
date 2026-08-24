@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.
+合规结果排序不能改变调用方拥有的 accepted 切片顺序。
 
 ## 验证命令（verify_cmds）
 ```bash

@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why calculating metrics for an intersection with no traffic samples can access an absent aggregate and define safe zero metrics.
+路口没有交通样本时，指标计算必须返回安全的空结果。
 
 ## 验证命令（verify_cmds）
 ```bash

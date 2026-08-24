@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why a failed CSV writer can still produce a successful export response and identify the missing error propagation.
+交通 CSV 导出写入失败时，接口必须返回明确错误。
 
 ## 验证命令（verify_cmds）
 ```bash

@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Return an explicit error for an unknown vehicle emission factor instead of silently omitting the vehicle.
+遇到未知车型排放因子时，排放报表必须返回明确错误。
 
 ## 验证命令（verify_cmds）
 ```bash

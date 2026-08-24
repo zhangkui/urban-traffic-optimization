@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Keep event response state consistent when one action fails while a multi-action response plan is being applied.
+事件响应计划中后续动作失败时，之前已启动的动作必须回滚。
 
 ## 验证命令（verify_cmds）
 ```bash

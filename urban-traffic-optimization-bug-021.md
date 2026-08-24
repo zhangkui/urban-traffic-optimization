@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.
+自适应信号并发更新时，较新的配时方案版本不能被旧写入覆盖。
 
 ## 验证命令（verify_cmds）
 ```bash

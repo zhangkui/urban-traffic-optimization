@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why capacity assessment can access a missing approach configuration and define the expected diagnostic result.
+容量评估缺少进口道配置时，必须返回可诊断结果而不能发生空指针崩溃。
 
 ## 验证命令（verify_cmds）
 ```bash

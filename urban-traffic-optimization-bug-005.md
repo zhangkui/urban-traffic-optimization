@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Stop a cancelled simulation promptly and prevent cancelled work from writing a completed result.
+仿真请求被取消后，正在运行的仿真任务必须及时停止。
 
 ## 验证命令（verify_cmds）
 ```bash

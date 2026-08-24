@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.
+设备查询结果为空时，安排巡检必须安全处理而不能解引用 nil。
 
 ## 验证命令（verify_cmds）
 ```bash

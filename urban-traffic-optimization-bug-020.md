@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Do not publish an expired forecast result after the request context has been cancelled.
+交通预测请求过期或取消后，系统不得继续发布预测结果。
 
 ## 验证命令（verify_cmds）
 ```bash

@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why an expired priority request may still be granted by a delayed decision task.
+延迟执行的优先控制任务不得授予已经取消的紧急请求。
 
 ## 验证命令（verify_cmds）
 ```bash

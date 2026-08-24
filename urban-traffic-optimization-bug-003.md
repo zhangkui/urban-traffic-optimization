@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Make repeated reachable-road queries return independent paths without one query changing the result of another query.
+路网可达性分析返回结果后，不得继续污染原始道路列表。
 
 ## 验证命令（verify_cmds）
 ```bash

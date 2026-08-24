@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Release a timed-out background job and its queue slot when the job context expires.
+后台交通任务超过截止时间后，必须通过 context 取消执行。
 
 ## 验证命令（verify_cmds）
 ```bash

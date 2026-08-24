@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.
+客户端断开后，实时 SSE 交通流发送不能永久阻塞。
 
 ## 验证命令（verify_cmds）
 ```bash

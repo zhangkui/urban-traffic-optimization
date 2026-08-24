@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why invalid weather observations are silently replaced with default weather and explain how validation errors should surface.
+天气观测字段非法时，系统必须拒绝数据而不是静默替换默认值。
 
 ## 验证命令（verify_cmds）
 ```bash

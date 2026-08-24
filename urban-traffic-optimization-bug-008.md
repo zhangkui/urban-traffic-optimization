@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Copy signal phases deeply so changing movements in a copied phase does not mutate the original timing plan.
+复制信号配置后，相位放行方向必须与原方案相互独立。
 
 ## 验证命令（verify_cmds）
 ```bash

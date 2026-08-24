@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why concurrent corridor offset updates can expose a partially updated plan to readers.
+干线协调发布 offset 时，并发读取者必须看到完整一致的快照。
 
 ## 验证命令（verify_cmds）
 ```bash

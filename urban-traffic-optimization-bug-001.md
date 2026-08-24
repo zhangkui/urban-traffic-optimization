@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-When multiple sensors report traffic for the same intersection at the same time, aggregate the readings without losing vehicle volume or corrupting the average speed.
+修复并发交通流量聚合导致路口流量快照损坏的问题。
 
 ## 验证命令（verify_cmds）
 ```bash

@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why a timing-plan approval failure loses its business error code and explain how the handler should preserve it.
+配时方案审核失败时必须返回错误，不能静默接受无效审核。
 
 ## 验证命令（verify_cmds）
 ```bash

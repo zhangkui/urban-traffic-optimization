@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Find why optimization recommendation can dereference a missing baseline plan and define the expected empty-result behavior.
+没有巡检记录时，维护状态计算不能索引空切片。
 
 ## 验证命令（verify_cmds）
 ```bash

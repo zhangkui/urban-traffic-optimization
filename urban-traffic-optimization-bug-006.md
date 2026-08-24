@@ -34,7 +34,7 @@ go test ./...
 ```
 
 ## 用户需求（user_query）
-Ensure concurrent congestion threshold evaluations create only one active event for the same intersection and condition.
+多个网关同时上报时，批量更新设备状态必须保证并发安全。
 
 ## 验证命令（verify_cmds）
 ```bash
