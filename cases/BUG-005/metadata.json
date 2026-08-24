@@ -8,6 +8,12 @@
     "g1_sha":  "c3e0ef3b7bcac19e6d9017b8df6654503e2c202d",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Stop a cancelled simulation promptly and prevent cancelled work from writing a completed result.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug5_red",
+    "red_sha":  "c3fd36371a10cf5526e59e191dc83015e782ba46",
+    "verify_cmds":  [
+                        "go test ./internal/simulation -count=1 -run TestRunIgnoringCancellationHonorsContext"
+                    ],
+    "gold_root_cause":  "中文根因：仿真执行入口 RunIgnoringCancellation 接收到调用方 context 后却改用 context.Background 调用 Run。生产文件/符号：internal/simulation/service.go 的 Service.RunIgnoringCancellation。调用链：仿真任务执行 → RunIgnoringCancellation → Run → ctx.Done。失效原因：调用方取消信号没有传递到执行循环，任务继续完成，无法及时释放资源或更新 cancelled 状态。证据：bug5_red 使用已取消 context，回归结果为 error=nil 且 status=completed，而预期是 context.Canceled 和 cancelled。",
+    "success_criteria":  "目标行为：仿真执行必须尊重调用方 context 的取消和超时信号。边界：执行前取消、执行中取消、正常完成三种场景分别返回正确状态；取消时不得保存 completed 结果。合法场景：已排队任务收到 context.Canceled 后返回 context.Canceled，状态为 cancelled。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
