@@ -1,13 +1,1 @@
-﻿{
-    "bug_id":  "BUG-024",
-    "number":  24,
-    "task_type":  "diagnosis",
-    "bug_type":  "context",
-    "business_domain":  "priority control",
-    "green_branch":  "bug24_green",
-    "g1_sha":  "4ce3554e364e3c31230d1c9a6f302d3ea78a4b0e",
-    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Find why an expired priority request may still be granted by a delayed decision task.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
-}
+﻿{"bug_id":"BUG-024","number":24,"task_type":"diagnosis","bug_type":"context","business_domain":"priority control","green_branch":"bug24_green","g1_sha":"4ce3554e364e3c31230d1c9a6f302d3ea78a4b0e","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Find why an expired priority request may still be granted by a delayed decision task.","red_branch":"bug24_red","red_sha":"c0d61cb8268f26345123efc56022d32877630d74","verify_cmds":["go test ./internal/priority -count=1 -run TestDecideWithContextRejectsCancelledRequest"],"gold_root_cause":"中文根因：带 context 的优先请求决策入口没有检查取消信号，直接调用 Decide。生产文件/符号：internal/priority/service.go 的 Service.DecideWithContext。调用链：优先请求 → 延迟决策 → DecideWithContext → Decide。失效原因：请求已取消时仍可能授予优先权。证据：红测使用已取消 context，结果 Granted=true。","success_criteria":"目标行为：取消或过期请求不得授予优先权。边界：已取消、已过期、有效和未知请求均明确返回。合法场景：有效请求按等级授予。验证标准：诊断回归测试通过。","status":"red_test_reproduced"}
