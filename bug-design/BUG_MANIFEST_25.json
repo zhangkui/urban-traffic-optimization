@@ -1,0 +1,377 @@
+﻿[
+    {
+        "bug_id":  "BUG-001",
+        "number":  1,
+        "task_type":  "bugfix",
+        "bug_type":  "concurrency",
+        "business_domain":  "real-time traffic aggregation",
+        "green_branch":  "bug1_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "When multiple sensors report traffic for the same intersection at the same time, aggregate the readings without losing vehicle volume or corrupting the average speed.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-002",
+        "number":  2,
+        "task_type":  "diagnosis",
+        "bug_type":  "nil",
+        "business_domain":  "device heartbeat",
+        "green_branch":  "bug2_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why querying an offline device without a heartbeat record can crash the device status endpoint, and identify the safe behavior.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-003",
+        "number":  3,
+        "task_type":  "bugfix",
+        "bug_type":  "slice",
+        "business_domain":  "road topology",
+        "green_branch":  "bug3_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Make repeated reachable-road queries return independent paths without one query changing the result of another query.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-004",
+        "number":  4,
+        "task_type":  "diagnosis",
+        "bug_type":  "error",
+        "business_domain":  "timing approval",
+        "green_branch":  "bug4_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why a timing-plan approval failure loses its business error code and explain how the handler should preserve it.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-005",
+        "number":  5,
+        "task_type":  "bugfix",
+        "bug_type":  "context",
+        "business_domain":  "simulation",
+        "green_branch":  "bug5_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Stop a cancelled simulation promptly and prevent cancelled work from writing a completed result.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-006",
+        "number":  6,
+        "task_type":  "bugfix",
+        "bug_type":  "concurrency",
+        "business_domain":  "congestion events",
+        "green_branch":  "bug6_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Ensure concurrent congestion threshold evaluations create only one active event for the same intersection and condition.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-007",
+        "number":  7,
+        "task_type":  "diagnosis",
+        "bug_type":  "nil",
+        "business_domain":  "optimization",
+        "green_branch":  "bug7_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why optimization recommendation can dereference a missing baseline plan and define the expected empty-result behavior.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-008",
+        "number":  8,
+        "task_type":  "bugfix",
+        "bug_type":  "slice",
+        "business_domain":  "signal phases",
+        "green_branch":  "bug8_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Copy signal phases deeply so changing movements in a copied phase does not mutate the original timing plan.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-009",
+        "number":  9,
+        "task_type":  "diagnosis",
+        "bug_type":  "error",
+        "business_domain":  "CSV reports",
+        "green_branch":  "bug9_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why a failed CSV writer can still produce a successful export response and identify the missing error propagation.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-010",
+        "number":  10,
+        "task_type":  "bugfix",
+        "bug_type":  "context",
+        "business_domain":  "live dashboard SSE",
+        "green_branch":  "bug10_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-011",
+        "number":  11,
+        "task_type":  "bugfix",
+        "bug_type":  "concurrency",
+        "business_domain":  "device state",
+        "green_branch":  "bug11_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-012",
+        "number":  12,
+        "task_type":  "diagnosis",
+        "bug_type":  "nil",
+        "business_domain":  "intersection metrics",
+        "green_branch":  "bug12_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why calculating metrics for an intersection with no traffic samples can access an absent aggregate and define safe zero metrics.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-013",
+        "number":  13,
+        "task_type":  "bugfix",
+        "bug_type":  "slice",
+        "business_domain":  "OD demand matrix",
+        "green_branch":  "bug13_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Make OD matrix filtering return a new pair slice so filtering a report cannot modify the stored matrix.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-014",
+        "number":  14,
+        "task_type":  "diagnosis",
+        "bug_type":  "error",
+        "business_domain":  "weather adjustment",
+        "green_branch":  "bug14_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why invalid weather observations are silently replaced with default weather and explain how validation errors should surface.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-015",
+        "number":  15,
+        "task_type":  "bugfix",
+        "bug_type":  "context",
+        "business_domain":  "background jobs",
+        "green_branch":  "bug15_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Release a timed-out background job and its queue slot when the job context expires.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-016",
+        "number":  16,
+        "task_type":  "diagnosis",
+        "bug_type":  "concurrency",
+        "business_domain":  "corridor coordination",
+        "green_branch":  "bug16_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why concurrent corridor offset updates can expose a partially updated plan to readers.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-017",
+        "number":  17,
+        "task_type":  "bugfix",
+        "bug_type":  "nil",
+        "business_domain":  "device inspection",
+        "green_branch":  "bug17_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Schedule an inspection safely when the device lookup is missing instead of dereferencing an absent device.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-018",
+        "number":  18,
+        "task_type":  "bugfix",
+        "bug_type":  "error",
+        "business_domain":  "incident response",
+        "green_branch":  "bug18_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Keep event response state consistent when one action fails while a multi-action response plan is being applied.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-019",
+        "number":  19,
+        "task_type":  "diagnosis",
+        "bug_type":  "slice",
+        "business_domain":  "compliance review",
+        "green_branch":  "bug19_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-020",
+        "number":  20,
+        "task_type":  "bugfix",
+        "bug_type":  "context",
+        "business_domain":  "traffic forecast",
+        "green_branch":  "bug20_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Do not publish an expired forecast result after the request context has been cancelled.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-021",
+        "number":  21,
+        "task_type":  "bugfix",
+        "bug_type":  "concurrency",
+        "business_domain":  "adaptive signal",
+        "green_branch":  "bug21_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Prevent concurrent adaptive decisions from overwriting a newer timing-plan version.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-022",
+        "number":  22,
+        "task_type":  "diagnosis",
+        "bug_type":  "nil",
+        "business_domain":  "capacity assessment",
+        "green_branch":  "bug22_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why capacity assessment can access a missing approach configuration and define the expected diagnostic result.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-023",
+        "number":  23,
+        "task_type":  "bugfix",
+        "bug_type":  "error",
+        "business_domain":  "emission report",
+        "green_branch":  "bug23_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Return an explicit error for an unknown vehicle emission factor instead of silently omitting the vehicle.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-024",
+        "number":  24,
+        "task_type":  "diagnosis",
+        "bug_type":  "context",
+        "business_domain":  "priority control",
+        "green_branch":  "bug24_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Find why an expired priority request may still be granted by a delayed decision task.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    },
+    {
+        "bug_id":  "BUG-025",
+        "number":  25,
+        "task_type":  "bugfix",
+        "bug_type":  "slice",
+        "business_domain":  "geofence alerts",
+        "green_branch":  "bug25_green",
+        "g1_sha":  {
+
+                   },
+        "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
+        "user_query":  "Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.",
+        "status":  "designed",
+        "red_branch":  "created during regression-test placement"
+    }
+]
