@@ -8,6 +8,12 @@
     "g1_sha":  "66dee6d1fb3754137013b2a5ce140b2f9302aeaa",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Ensure concurrent congestion threshold evaluations create only one active event for the same intersection and condition.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug6_red",
+    "red_sha":  "98f96957ed9aa16c4286b9c9d377b8c5501125d4",
+    "verify_cmds":  [
+                        "go test -race ./internal/device -count=1 -run TestEvaluateBatchConcurrentIsRaceFree"
+                    ],
+    "gold_root_cause":  "中文根因：设备批量状态刷新由多个 goroutine 直接并发写入同一个普通 map，没有同步保护。生产文件/符号：internal/device/service.go 的 Service.EvaluateBatchConcurrent。调用链：设备状态刷新任务 → EvaluateBatchConcurrent → goroutine → result map。失效原因：并发 map 写会产生 data race，严重时触发 concurrent map writes。证据：bug6_red 的 -race 测试报告 service.go:148 的 mapassign_faststr 数据竞争。",
+    "success_criteria":  "目标行为：批量刷新设备状态时所有设备结果安全写入并完整返回。边界：空列表、单设备和多设备并发刷新都不得出现 race；结果数量必须与输入设备数量一致。合法场景：32 个设备同时刷新，返回 32 个状态结果。验证标准：回归测试在 -race 下通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
