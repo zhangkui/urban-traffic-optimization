@@ -8,6 +8,6 @@
     "g1_sha":  "77f5ec89860396e77b91b55efb181d8e2ab3b3c1",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "When multiple sensors report traffic for the same intersection at the same time, aggregate the readings without losing vehicle volume or corrupting the average speed.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "status":  "red_test_reproduced",
+    "red_branch":  "bug1_red"
 }
