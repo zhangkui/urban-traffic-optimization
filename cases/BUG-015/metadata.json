@@ -8,6 +8,12 @@
     "g1_sha":  "436bb72cdca4800c7f905d589b3422232ff25cda",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Release a timed-out background job and its queue slot when the job context expires.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug15_red",
+    "red_sha":  "b67b25f2f47314befb6e9b85f66d635b8272e881",
+    "verify_cmds":  [
+                        "go test ./internal/jobs -count=1 -run TestEnqueueWithContextReleasesTimedOutJob"
+                    ],
+    "gold_root_cause":  "中文根因：EnqueueWithContext 接收了调用方的 deadline context，却在启动执行 goroutine 时改用 context.Background；executeWithContext 也没有使用传入 context。生产文件/符号：internal/jobs/queue.go 的 Queue.EnqueueWithContext/executeWithContext。调用链：后台任务入队 → context deadline → executeWithContext → handler。失效原因：超时信号无法到达 handler，任务持续 running，cancel map 条目和队列资源不能及时释放。证据：bug15_red 回归测试的 20ms context 超时后，任务在 100ms 内仍为 running。",
+    "success_criteria":  "目标行为：调用方 context 超时或取消后，后台 handler 必须收到信号，任务进入 cancelled 或 failed，并释放 cancel 槽位。边界：执行前超时、执行中超时、正常完成和显式 Cancel 均需正确处理。合法场景：20ms 超时的 slow job 在有限时间内结束且不再保持 running。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
