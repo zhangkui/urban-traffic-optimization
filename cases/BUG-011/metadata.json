@@ -8,6 +8,12 @@
     "g1_sha":  "4fee8c29fa76158fcc9e71f3070814b09ba11166",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Prevent a stale heartbeat from changing a device back to online after an administrator disables it concurrently.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug11_red",
+    "red_sha":  "e75343f15a1a138b68621ed51e925ca550d6d4ad",
+    "verify_cmds":  [
+                        "go test ./internal/device -count=1 -run TestApplyHeartbeatDoesNotReviveDisabledDevice"
+                    ],
+    "gold_root_cause":  "中文根因：设备心跳更新路径无条件把设备状态设置为 online，没有检查管理员已经设置的 disabled 状态。生产文件/符号：internal/device/service.go 的 Service.ApplyHeartbeat。调用链：控制器心跳上报 → ApplyHeartbeat → Get → 修改状态 → save。失效原因：管理员禁用设备与迟到心跳交错时，旧心跳覆盖控制面状态，设备重新出现在在线列表。证据：bug11_red 回归测试注册 disabled 设备后调用 ApplyHeartbeat，最终状态变为 online。",
+    "success_criteria":  "目标行为：管理员禁用的设备即使收到旧心跳也必须保持 disabled。边界：disabled、maintenance、offline 和正常在线设备的心跳处理要区分；并发交错时控制面状态优先。合法场景：disabled 设备收到心跳后状态仍为 disabled，同时记录心跳时间供审计。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
