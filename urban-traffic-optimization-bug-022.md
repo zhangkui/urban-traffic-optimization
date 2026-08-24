@@ -1,4 +1,4 @@
-# 出题包 BUG-022
+﻿# 出题包 BUG-022
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug22_green
 红测分支: bug22_red
-基线提交: dd78ebe73e4f2c576636e090aba492cc6a8c843b
+$12aa20d1a56ffae011f0c3dbc4e5e0b3b1e083d7b
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/capacity -count=1 -run TestAssessConfiguredReportsMissingAppr
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

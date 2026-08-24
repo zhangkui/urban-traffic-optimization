@@ -1,4 +1,4 @@
-# 出题包 BUG-006
+﻿# 出题包 BUG-006
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug6_green
 红测分支: bug6_red
-基线提交: 66dee6d1fb3754137013b2a5ce140b2f9302aeaa
+$170ed5d964efd6ce02ce7f34d7a9ac0c2a3e757e7
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test -race ./internal/device -count=1 -run TestEvaluateBatchConcurrentIsRaceF
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

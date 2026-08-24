@@ -5,7 +5,7 @@
     "bug_type":  "error",
     "business_domain":  "weather adjustment",
     "green_branch":  "bug14_green",
-    "g1_sha":  "4dd278abf6fbec8c012d4293e4bf2c88627414a1",
+    "g1_sha":  "6983f25beb6cfa858eb12b6995c088d962ed234e",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "天气观测字段非法时，系统必须拒绝数据而不是静默替换默认值。",
     "red_branch":  "bug14_red",

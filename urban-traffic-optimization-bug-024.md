@@ -1,4 +1,4 @@
-# 出题包 BUG-024
+﻿# 出题包 BUG-024
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug24_green
 红测分支: bug24_red
-基线提交: 4ce3554e364e3c31230d1c9a6f302d3ea78a4b0e
+$1619fad035e20ab5e9988307bdf0a4aba6c057678
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/priority -count=1 -run TestDecideWithContextRejectsCancelledR
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

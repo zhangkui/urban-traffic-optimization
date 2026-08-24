@@ -5,7 +5,7 @@
     "bug_type":  "concurrency",
     "business_domain":  "corridor coordination",
     "green_branch":  "bug16_green",
-    "g1_sha":  "7d824ee9e82cb1488bec8f54fd64c195bca50e7e",
+    "g1_sha":  "279ccfe68295834ec568368e0f514209add470df",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "干线协调发布 offset 时，并发读取者必须看到完整一致的快照。",
     "red_branch":  "bug16_red",

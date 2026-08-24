@@ -5,7 +5,7 @@
     "bug_type":  "nil",
     "business_domain":  "device inspection",
     "green_branch":  "bug17_green",
-    "g1_sha":  "c234c974e9bea8aba080a01006e0267b18aab179",
+    "g1_sha":  "50b4310f55baa689c0c451a6f19f8dde83b961da",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "设备查询结果为空时，安排巡检必须安全处理而不能解引用 nil。",
     "red_branch":  "bug17_red",

@@ -1,4 +1,4 @@
-# 出题包 BUG-002
+﻿# 出题包 BUG-002
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug2_green
 红测分支: bug2_red
-基线提交: 2d430b091280e62a274cb34fdfa1ec7b02b43e5b
+$1908c70a1113fceb3734ad9c5d1737e7ef906c3b6
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/device -count=1 -run TestStatusSummaryWithoutHeartbeatReturns
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

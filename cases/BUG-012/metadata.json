@@ -5,7 +5,7 @@
     "bug_type":  "nil",
     "business_domain":  "intersection metrics",
     "green_branch":  "bug12_green",
-    "g1_sha":  "b9518ac4e5764d63efce09799a0d1015d97e1a87",
+    "g1_sha":  "2a7caedef22fd07b7e8e0f67a4b5c267b9b04b0b",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "路口没有交通样本时，指标计算必须返回安全的空结果。",
     "red_branch":  "bug12_red",

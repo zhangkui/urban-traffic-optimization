@@ -5,7 +5,7 @@
     "bug_type":  "slice",
     "business_domain":  "geofence alerts",
     "green_branch":  "bug25_green",
-    "g1_sha":  "3412f5ca94b630b93e37abc683f3aea81389338d",
+    "g1_sha":  "b3c7e22b214433bf22fec13bc99d69218d277a5d",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "地理围栏重复评估时，新告警不得覆盖历史告警记录。",
     "red_branch":  "bug25_red",

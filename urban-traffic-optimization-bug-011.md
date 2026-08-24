@@ -1,4 +1,4 @@
-# 出题包 BUG-011
+﻿# 出题包 BUG-011
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug11_green
 红测分支: bug11_red
-基线提交: 4fee8c29fa76158fcc9e71f3070814b09ba11166
+$198ee16235afc1a5952205a43889d2f4e97f7e838
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/device -count=1 -run TestApplyHeartbeatDoesNotReviveDisabledD
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

@@ -1,4 +1,4 @@
-# 出题包 BUG-025
+﻿# 出题包 BUG-025
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug25_green
 红测分支: bug25_red
-基线提交: 3412f5ca94b630b93e37abc683f3aea81389338d
+基线提交: b3c7e22b214433bf22fec13bc99d69218d277a5d
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/geofence -count=1 -run TestEvaluateHistoryPreservesHistorical
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

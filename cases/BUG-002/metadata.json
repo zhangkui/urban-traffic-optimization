@@ -5,7 +5,7 @@
     "bug_type":  "nil",
     "business_domain":  "device heartbeat",
     "green_branch":  "bug2_green",
-    "g1_sha":  "2d430b091280e62a274cb34fdfa1ec7b02b43e5b",
+    "g1_sha":  "908c70a1113fceb3734ad9c5d1737e7ef906c3b6",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "设备没有心跳记录时，安排下一次巡检不得发生空指针崩溃。",
     "red_branch":  "bug2_red",

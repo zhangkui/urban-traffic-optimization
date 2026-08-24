@@ -5,7 +5,7 @@
     "bug_type":  "slice",
     "business_domain":  "road topology",
     "green_branch":  "bug3_green",
-    "g1_sha":  "5daad778247714e42921b9b253642dc0708c7c72",
+    "g1_sha":  "cdcc1fa1929fd6871d3324c8133e488cb9942aa4",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "路网可达性分析返回结果后，不得继续污染原始道路列表。",
     "red_branch":  "bug3_red",

@@ -5,7 +5,7 @@
     "bug_type":  "nil",
     "business_domain":  "optimization",
     "green_branch":  "bug7_green",
-    "g1_sha":  "d9c33f2a6394eff32c18d780740498121f5fd6cb",
+    "g1_sha":  "580159b01084228792bac2e114043cc5354df07b",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "没有巡检记录时，维护状态计算不能索引空切片。",
     "red_branch":  "bug7_red",

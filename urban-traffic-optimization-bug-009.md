@@ -1,4 +1,4 @@
-# 出题包 BUG-009
+﻿# 出题包 BUG-009
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug9_green
 红测分支: bug9_red
-基线提交: b17b242528c4465fecc716da3e0b5dd107c123b5
+$100175eae542ece954b40c5a0dd8a1c3407904382
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/reporting -count=1 -run TestTrafficCSVUncheckedReturnsWriteEr
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

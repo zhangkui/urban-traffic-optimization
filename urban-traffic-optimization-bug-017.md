@@ -1,4 +1,4 @@
-# 出题包 BUG-017
+﻿# 出题包 BUG-017
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug17_green
 红测分支: bug17_red
-基线提交: c234c974e9bea8aba080a01006e0267b18aab179
+$150b4310f55baa689c0c451a6f19f8dde83b961da
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/maintenance -count=1 -run TestScheduleFromLookupHandlesMissin
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

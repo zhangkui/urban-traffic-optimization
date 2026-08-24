@@ -1,4 +1,4 @@
-# 出题包 BUG-007
+﻿# 出题包 BUG-007
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug7_green
 红测分支: bug7_red
-基线提交: d9c33f2a6394eff32c18d780740498121f5fd6cb
+$1580159b01084228792bac2e114043cc5354df07b
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/maintenance -count=1 -run TestLatestScoreWithoutInspectionRet
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

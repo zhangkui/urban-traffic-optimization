@@ -5,7 +5,7 @@
     "bug_type":  "context",
     "business_domain":  "traffic forecast",
     "green_branch":  "bug20_green",
-    "g1_sha":  "c056b90f484106411f025441fa6c2e7e52930673",
+    "g1_sha":  "54cddc042b04ef4bdaf878e3a239e7be1caa8a5c",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "交通预测请求过期或取消后，系统不得继续发布预测结果。",
     "red_branch":  "bug20_red",

@@ -5,7 +5,7 @@
     "bug_type":  "concurrency",
     "business_domain":  "congestion events",
     "green_branch":  "bug6_green",
-    "g1_sha":  "66dee6d1fb3754137013b2a5ce140b2f9302aeaa",
+    "g1_sha":  "70ed5d964efd6ce02ce7f34d7a9ac0c2a3e757e7",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "多个网关同时上报时，批量更新设备状态必须保证并发安全。",
     "red_branch":  "bug6_red",

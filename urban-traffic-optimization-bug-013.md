@@ -1,4 +1,4 @@
-# 出题包 BUG-013
+﻿# 出题包 BUG-013
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug13_green
 红测分支: bug13_red
-基线提交: d70ec7dac999a4164f0e4d55058240c80c9f50cb
+$17a540b7f4f1b46e61ed55ced28215b5033d2e8aa
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/demand -count=1 -run TestFilterInPlaceDoesNotMutateStoredMatr
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

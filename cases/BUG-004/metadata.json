@@ -5,7 +5,7 @@
     "bug_type":  "error",
     "business_domain":  "timing approval",
     "green_branch":  "bug4_green",
-    "g1_sha":  "4ddd8e917469e19ee7e19d3b5ae008d9bbf1bb26",
+    "g1_sha":  "bcec60166d9709ae5d979a9f052d81a3c428ba93",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "配时方案审核失败时必须返回错误，不能静默接受无效审核。",
     "red_branch":  "bug4_red",

@@ -5,7 +5,7 @@
     "bug_type":  "concurrency",
     "business_domain":  "real-time traffic aggregation",
     "green_branch":  "bug1_green",
-    "g1_sha":  "77f5ec89860396e77b91b55efb181d8e2ab3b3c1",
+    "g1_sha":  "c1e2ab7d1826ba27690b5207d22349cdaf0a7e77",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "修复并发交通流量聚合导致路口流量快照损坏的问题。",
     "red_branch":  "bug1_red",

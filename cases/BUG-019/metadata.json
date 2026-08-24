@@ -5,7 +5,7 @@
     "bug_type":  "slice",
     "business_domain":  "compliance review",
     "green_branch":  "bug19_green",
-    "g1_sha":  "218ec099b55918302ff7d0e8f4efeab11e78cdd6",
+    "g1_sha":  "036738b3b88527c08779d26d4f3bd1715890c1bd",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "合规结果排序不能改变调用方拥有的 accepted 切片顺序。",
     "red_branch":  "bug19_red",

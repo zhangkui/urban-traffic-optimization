@@ -1,4 +1,4 @@
-# 出题包 BUG-008
+﻿# 出题包 BUG-008
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug8_green
 红测分支: bug8_red
-基线提交: 18c7097b7770541f04d5e618af0ca8803677a9bd
+$14b03ce1ab36d00eabd90f8076f10d421c3107908
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/signal -count=1 -run TestCopyPlanDeepCopiesPhaseMovements
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

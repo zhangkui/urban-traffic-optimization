@@ -5,7 +5,7 @@
     "bug_type":  "error",
     "business_domain":  "emission report",
     "green_branch":  "bug23_green",
-    "g1_sha":  "9ea707f2951c48fb8d455281fa6e3b96e818b012",
+    "g1_sha":  "7baa7fca9653773ac23b0475f50fa214601941cf",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "遇到未知车型排放因子时，排放报表必须返回明确错误。",
     "red_branch":  "bug23_red",

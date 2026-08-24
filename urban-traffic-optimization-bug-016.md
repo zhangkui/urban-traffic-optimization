@@ -1,4 +1,4 @@
-# 出题包 BUG-016
+﻿# 出题包 BUG-016
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug16_green
 红测分支: bug16_red
-基线提交: 7d824ee9e82cb1488bec8f54fd64c195bca50e7e
+$1279ccfe68295834ec568368e0f514209add470df
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test -race ./internal/corridor -count=1 -run TestPublishedOffsetsConcurrentAc
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

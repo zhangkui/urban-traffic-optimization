@@ -5,7 +5,7 @@
     "bug_type":  "nil",
     "business_domain":  "capacity assessment",
     "green_branch":  "bug22_green",
-    "g1_sha":  "dd78ebe73e4f2c576636e090aba492cc6a8c843b",
+    "g1_sha":  "2aa20d1a56ffae011f0c3dbc4e5e0b3b1e083d7b",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "容量评估缺少进口道配置时，必须返回可诊断结果而不能发生空指针崩溃。",
     "red_branch":  "bug22_red",

@@ -5,7 +5,7 @@
     "bug_type":  "concurrency",
     "business_domain":  "adaptive signal",
     "green_branch":  "bug21_green",
-    "g1_sha":  "66d4b17f18b26b1f5b496b1def794affd6693800",
+    "g1_sha":  "d6b970772f26336eaa7659ca3af610dc8fdb3e63",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "自适应信号并发更新时，较新的配时方案版本不能被旧写入覆盖。",
     "red_branch":  "bug21_red",

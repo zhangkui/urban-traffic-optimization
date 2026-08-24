@@ -1,4 +1,4 @@
-# 出题包 BUG-010
+﻿# 出题包 BUG-010
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug10_green
 红测分支: bug10_red
-基线提交: f816278aa3341a75b665195e35f75087837e8736
+基线提交: f0b516c0092f8e48d2ec579fac684839216f77e9
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/realtime -count=1 -run TestSendToClientHonorsDisconnectedCont
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

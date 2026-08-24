@@ -1,4 +1,4 @@
-# 出题包 BUG-003
+﻿# 出题包 BUG-003
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug3_green
 红测分支: bug3_red
-基线提交: 5daad778247714e42921b9b253642dc0708c7c72
+基线提交: cdcc1fa1929fd6871d3324c8133e488cb9942aa4
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/road -count=1 -run TestReachableSnapshotReturnsIndependentPat
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

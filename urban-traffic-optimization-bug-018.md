@@ -1,4 +1,4 @@
-# 出题包 BUG-018
+﻿# 出题包 BUG-018
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug18_green
 红测分支: bug18_red
-基线提交: 3be629321662fdefde09951ed2caf5072230e083
+$169a11f3c3d3b90d47a16ed5c1ff05f8fbfacafbb
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/response -count=1 -run TestApplyPlanRollsBackWhenOneActionFai
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

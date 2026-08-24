@@ -1,4 +1,4 @@
-# 出题包 BUG-012
+﻿# 出题包 BUG-012
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug12_green
 红测分支: bug12_red
-基线提交: b9518ac4e5764d63efce09799a0d1015d97e1a87
+$12a7caedef22fd07b7e8e0f67a4b5c267b9b04b0b
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/analysis -count=1 -run TestEmptySampleSummaryReturnsZeroMetri
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

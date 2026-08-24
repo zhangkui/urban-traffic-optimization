@@ -5,7 +5,7 @@
     "bug_type":  "context",
     "business_domain":  "priority control",
     "green_branch":  "bug24_green",
-    "g1_sha":  "4ce3554e364e3c31230d1c9a6f302d3ea78a4b0e",
+    "g1_sha":  "619fad035e20ab5e9988307bdf0a4aba6c057678",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "延迟执行的优先控制任务不得授予已经取消的紧急请求。",
     "red_branch":  "bug24_red",

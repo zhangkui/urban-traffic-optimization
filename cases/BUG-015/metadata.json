@@ -5,7 +5,7 @@
     "bug_type":  "context",
     "business_domain":  "background jobs",
     "green_branch":  "bug15_green",
-    "g1_sha":  "436bb72cdca4800c7f905d589b3422232ff25cda",
+    "g1_sha":  "c66be7def46dce787a7af2831d685efa7cc4a7a1",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "后台交通任务超过截止时间后，必须通过 context 取消执行。",
     "red_branch":  "bug15_red",

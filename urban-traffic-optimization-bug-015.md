@@ -1,4 +1,4 @@
-# 出题包 BUG-015
+﻿# 出题包 BUG-015
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug15_green
 红测分支: bug15_red
-基线提交: 436bb72cdca4800c7f905d589b3422232ff25cda
+基线提交: c66be7def46dce787a7af2831d685efa7cc4a7a1
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/jobs -count=1 -run TestEnqueueWithContextReleasesTimedOutJob
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

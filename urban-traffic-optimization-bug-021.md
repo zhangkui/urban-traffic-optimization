@@ -1,4 +1,4 @@
-# 出题包 BUG-021
+﻿# 出题包 BUG-021
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug21_green
 红测分支: bug21_red
-基线提交: 66d4b17f18b26b1f5b496b1def794affd6693800
+基线提交: d6b970772f26336eaa7659ca3af610dc8fdb3e63
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test -race ./internal/adaptive -count=1 -run TestAdaptiveControllerConcurrent
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

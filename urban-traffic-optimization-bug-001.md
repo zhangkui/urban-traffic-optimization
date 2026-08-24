@@ -1,4 +1,4 @@
-# 出题包 BUG-001
+﻿# 出题包 BUG-001
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug1_green
 红测分支: bug1_red
-基线提交: 77f5ec89860396e77b91b55efb181d8e2ab3b3c1
+基线提交: c1e2ab7d1826ba27690b5207d22349cdaf0a7e77
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test -race ./internal/traffic -count=1 -run TestRecordBatchConcurrentSensorRe
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

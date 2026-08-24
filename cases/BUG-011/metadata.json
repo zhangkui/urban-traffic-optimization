@@ -5,7 +5,7 @@
     "bug_type":  "concurrency",
     "business_domain":  "device state",
     "green_branch":  "bug11_green",
-    "g1_sha":  "4fee8c29fa76158fcc9e71f3070814b09ba11166",
+    "g1_sha":  "98ee16235afc1a5952205a43889d2f4e97f7e838",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "过期心跳到达时，已禁用的信号设备不得被错误恢复。",
     "red_branch":  "bug11_red",

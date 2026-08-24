@@ -1,4 +1,4 @@
-# 出题包 BUG-023
+﻿# 出题包 BUG-023
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug23_green
 红测分支: bug23_red
-基线提交: 9ea707f2951c48fb8d455281fa6e3b96e818b012
+$17baa7fca9653773ac23b0475f50fa214601941cf
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/emission -count=1 -run TestEstimateStrictRejectsUnknownVehicl
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

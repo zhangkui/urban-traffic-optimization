@@ -5,7 +5,7 @@
     "bug_type":  "error",
     "business_domain":  "incident response",
     "green_branch":  "bug18_green",
-    "g1_sha":  "3be629321662fdefde09951ed2caf5072230e083",
+    "g1_sha":  "69a11f3c3d3b90d47a16ed5c1ff05f8fbfacafbb",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "事件响应计划中后续动作失败时，之前已启动的动作必须回滚。",
     "red_branch":  "bug18_red",

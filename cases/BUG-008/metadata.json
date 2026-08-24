@@ -5,7 +5,7 @@
     "bug_type":  "slice",
     "business_domain":  "signal phases",
     "green_branch":  "bug8_green",
-    "g1_sha":  "18c7097b7770541f04d5e618af0ca8803677a9bd",
+    "g1_sha":  "4b03ce1ab36d00eabd90f8076f10d421c3107908",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "复制信号配置后，相位放行方向必须与原方案相互独立。",
     "red_branch":  "bug8_red",

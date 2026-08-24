@@ -1,4 +1,4 @@
-# 出题包 BUG-014
+﻿# 出题包 BUG-014
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug14_green
 红测分支: bug14_red
-基线提交: 4dd278abf6fbec8c012d4293e4bf2c88627414a1
+$16983f25beb6cfa858eb12b6995c088d962ed234e
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/weather -count=1 -run TestRecordWithDefaultSurfacesInvalidObs
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

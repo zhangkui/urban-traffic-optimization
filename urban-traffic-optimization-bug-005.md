@@ -1,4 +1,4 @@
-# 出题包 BUG-005
+﻿# 出题包 BUG-005
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug5_green
 红测分支: bug5_red
-基线提交: c3e0ef3b7bcac19e6d9017b8df6654503e2c202d
+基线提交: c33b3e31eaea43bf543abb1a2706c529f08490c6
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/simulation -count=1 -run TestRunIgnoringCancellationHonorsCon
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

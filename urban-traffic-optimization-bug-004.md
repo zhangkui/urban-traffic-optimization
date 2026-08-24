@@ -1,4 +1,4 @@
-# 出题包 BUG-004
+﻿# 出题包 BUG-004
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug4_green
 红测分支: bug4_red
-基线提交: 4ddd8e917469e19ee7e19d3b5ae008d9bbf1bb26
+基线提交: bcec60166d9709ae5d979a9f052d81a3c428ba93
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/compliance -count=1 -run TestAuthorizePublishPropagatesFailed
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+

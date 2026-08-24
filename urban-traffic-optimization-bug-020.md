@@ -1,4 +1,4 @@
-# 出题包 BUG-020
+﻿# 出题包 BUG-020
 
 ## 基本信息
 | 字段 | 值 |
@@ -13,7 +13,7 @@
 分支模型: orphan-redgreen
 绿测分支: bug20_green
 红测分支: bug20_red
-基线提交: c056b90f484106411f025441fa6c2e7e52930673
+$154cddc042b04ef4bdaf878e3a239e7be1caa8a5c
 
 | 字段 | 值 |
 |---|---|
@@ -54,3 +54,6 @@ go test ./internal/forecast -count=1 -run TestPublishHonorsCancelledContext
 
 ## 轨迹收集清单
 - collect 验收测试轨迹后才创建红测分支并落位回归测试。
+
+
+
