@@ -1,13 +1,3 @@
 ﻿{
-    "bug_id":  "BUG-018",
-    "number":  18,
-    "task_type":  "bugfix",
-    "bug_type":  "error",
-    "business_domain":  "incident response",
-    "green_branch":  "bug18_green",
-    "g1_sha":  "3be629321662fdefde09951ed2caf5072230e083",
-    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Keep event response state consistent when one action fails while a multi-action response plan is being applied.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+  "bug_id":"BUG-018","number":18,"task_type":"bugfix","bug_type":"error","business_domain":"incident response","green_branch":"bug18_green","g1_sha":"3be629321662fdefde09951ed2caf5072230e083","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Keep event response state consistent when one action fails while a multi-action response plan is being applied.","red_branch":"bug18_red","red_sha":"d17dd045c77c6dc338d23c665c10bd7cdb559835","verify_cmds":["go test ./internal/response -count=1 -run TestApplyPlanRollsBackWhenOneActionFails"],"gold_root_cause":"中文根因：多动作响应计划逐个启动动作，后续动作失败时没有回滚已启动动作。生产文件/符号：internal/response/service.go 的 Service.ApplyPlan。调用链：事件响应计划 → Instantiate/Actions → ApplyPlan → Start。失效原因：错误路径直接返回，前序动作已变为 running，计划状态出现部分提交。证据：红测观察到 notify 状态从 pending 变为 running 后返回失败。","success_criteria":"目标行为：任一动作启动失败时整个响应计划保持失败前状态。边界：零动作、单动作、多动作及中途失败均需稳定。合法场景：所有动作可启动时全部 running；任一动作冲突时已启动动作恢复 pending。验证标准：回归测试和全量 Go 测试通过。","status":"red_test_reproduced"
 }
