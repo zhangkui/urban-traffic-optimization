@@ -8,6 +8,12 @@
     "g1_sha":  "f816278aa3341a75b665195e35f75087837e8736",
     "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
     "user_query":  "Release a dashboard subscriber when its HTTP client disconnects so publishers cannot block on a dead stream.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
+    "red_branch":  "bug10_red",
+    "red_sha":  "0dd8a4656ce79187a2525518775abd07e5cb28f8",
+    "verify_cmds":  [
+                        "go test ./internal/realtime -count=1 -run TestSendToClientHonorsDisconnectedContext"
+                    ],
+    "gold_root_cause":  "中文根因：SSE 客户端发送方法直接向无缓冲 client channel 写入，没有在发送操作中监听 HTTP 请求 context。生产文件/符号：internal/realtime/hub.go 的 Hub.SendToClient。调用链：实时大屏发布 → SSE 客户端发送 → client channel → HTTP 连接。失效原因：客户端断开或消费者停止读取时，发布 goroutine 永久阻塞，无法释放订阅资源。证据：bug10_red 使用已取消 context 和无人读取的 client channel，50ms 内发送未返回。",
+    "success_criteria":  "目标行为：SSE 客户端断开后，发送操作应立即停止并返回 context.Canceled。边界：已取消 context、正常接收、缓冲区满和请求结束等场景都不得永久阻塞。合法场景：客户端取消后向无消费者 channel 发送更新，方法在有限时间内返回取消错误。验证标准：回归测试通过，go test ./...、go test -race ./... 和 go vet ./... 不失败。",
+    "status":  "red_test_reproduced"
 }
