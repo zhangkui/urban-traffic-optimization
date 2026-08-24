@@ -1,13 +1,1 @@
-﻿{
-    "bug_id":  "BUG-019",
-    "number":  19,
-    "task_type":  "diagnosis",
-    "bug_type":  "slice",
-    "business_domain":  "compliance review",
-    "green_branch":  "bug19_green",
-    "g1_sha":  "218ec099b55918302ff7d0e8f4efeab11e78cdd6",
-    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
-}
+﻿{"bug_id":"BUG-019","number":19,"task_type":"diagnosis","bug_type":"slice","business_domain":"compliance review","green_branch":"bug19_green","g1_sha":"218ec099b55918302ff7d0e8f4efeab11e78cdd6","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Find why sorting compliance findings changes a caller-owned slice and explain the required ownership rule.","red_branch":"bug19_red","red_sha":"99d0dac7a4e830bd8bf7ca2769086f557bdc758b","verify_cmds":["go test ./internal/quality -count=1 -run TestSortAcceptedDoesNotMutateCallerSlice"],"gold_root_cause":"中文根因：排序直接操作 Result.Accepted 引用的调用方切片。生产文件/符号：internal/quality/service.go 的 SortAcceptedInPlace。调用链：合规校验结果 → 排序 → sort.Slice。失效原因：切片共享底层数组，排序改变外部顺序。证据：红测调用后 caller-owned slice 首元素从 a 变为 b。","success_criteria":"目标行为：整理合规结果不得修改调用方拥有的原始切片。边界：空、单元素、重复时间和多元素均需安全。合法场景：结果排序正确且输入顺序保持。验证标准：诊断回归测试稳定失败并明确指出共享底层数组。","status":"red_test_reproduced"}
