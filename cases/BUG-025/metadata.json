@@ -1,13 +1,1 @@
-﻿{
-    "bug_id":  "BUG-025",
-    "number":  25,
-    "task_type":  "bugfix",
-    "bug_type":  "slice",
-    "business_domain":  "geofence alerts",
-    "green_branch":  "bug25_green",
-    "g1_sha":  "3412f5ca94b630b93e37abc683f3aea81389338d",
-    "go_version":  "go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)",
-    "user_query":  "Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.",
-    "status":  "designed",
-    "red_branch":  "created during regression-test placement"
-}
+﻿{"bug_id":"BUG-025","number":25,"task_type":"bugfix","bug_type":"slice","business_domain":"geofence alerts","green_branch":"bug25_green","g1_sha":"3412f5ca94b630b93e37abc683f3aea81389338d","go_version":"go1.26.1 windows/amd64 (GOTOOLCHAIN=auto)","user_query":"Snapshot alert data independently so later zone evaluations cannot mutate historical alert records.","red_branch":"bug25_red","red_sha":"2a235944b859310277524c384858193439e3577c","verify_cmds":["go test ./internal/geofence -count=1 -run TestEvaluateHistoryPreservesHistoricalAlerts"],"gold_root_cause":"中文根因：历史告警切片与本次评估结果复用底层数组，EvaluateHistory 使用 append(history[:0], alerts...) 覆盖历史记录。生产文件/符号：internal/geofence/service.go 的 Service.EvaluateHistory。调用链：区域评估 → 历史告警缓存 → append 复用数组。失效原因：后续评估改变历史告警，报表和审计记录失真。证据：红测发现 old[0].RuleID 从 old 被覆盖为 r1。","success_criteria":"目标行为：新评估结果与历史告警完全独立。边界：空历史、容量足够、容量不足、多规则和重复评估均安全。合法场景：历史记录保持原值，新告警单独返回。验证标准：回归测试、全量测试和 race 测试通过。","status":"red_test_reproduced"}
