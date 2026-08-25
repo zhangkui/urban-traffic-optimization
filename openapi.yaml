@@ -1,0 +1,31 @@
+﻿openapi: 3.0.3
+info:
+  title: Urban Traffic Optimization API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /healthz:
+    get:
+      summary: Health check
+      responses: {"200": {description: OK}}
+  /api/v1/dashboard/summary:
+    get:
+      summary: Real-time dashboard summary
+      responses: {"200": {description: Summary}}
+  /api/v1/roads:
+    get: {summary: List roads, responses: {"200": {description: Road page}}}
+    post: {summary: Create road, responses: {"201": {description: Created}, "400": {description: Validation error}}}
+  /api/v1/timing-plans:
+    get: {summary: List timing plans, responses: {"200": {description: Plans}}}
+    post: {summary: Create timing plan, responses: {"201": {description: Created}}}
+  /api/v1/traffic/readings:
+    get: {summary: Recent traffic readings, responses: {"200": {description: Readings}}}
+    post: {summary: Record traffic reading, responses: {"201": {description: Created}}}
+  /api/v1/events:
+    get: {summary: List traffic events, responses: {"200": {description: Events}}}
+    post: {summary: Open traffic event, responses: {"201": {description: Created}}}
+  /api/v1/simulations:
+    post: {summary: Create and run simulation, responses: {"202": {description: Accepted}}}
+  /api/v1/optimization/candidates:
+    post: {summary: Generate optimization candidates, responses: {"200": {description: Candidates}}}
