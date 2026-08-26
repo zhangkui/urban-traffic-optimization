@@ -1,0 +1,11 @@
+﻿import { createRouter, createWebHistory } from 'vue-router'
+import Layout from '../layouts/Layout.vue'
+import Dashboard from '../views/dashboard/Index.vue'
+import Roads from '../views/roads/Index.vue'
+import Intersections from '../views/intersections/Index.vue'
+import Timing from '../views/timing/Index.vue'
+import Traffic from '../views/traffic/Index.vue'
+import Events from '../views/events/Index.vue'
+import Simulations from '../views/simulations/Index.vue'
+import Optimization from '../views/optimization/Index.vue'
+export default createRouter({ history:createWebHistory(), routes:[{path:'/',component:Layout,children:[{path:'',redirect:'/dashboard'},{path:'/dashboard',component:Dashboard},{path:'/roads',component:Roads},{path:'/intersections',component:Intersections},{path:'/timing',component:Timing},{path:'/traffic',component:Traffic},{path:'/events',component:Events},{path:'/simulations',component:Simulations},{path:'/optimization',component:Optimization}]}] })
